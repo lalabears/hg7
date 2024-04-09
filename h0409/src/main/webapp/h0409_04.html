@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>목록태그</title>
+</head>
+<body>
+	<p>
+	HTML 리스트 : <br>
+	리스트는 여러 요소를 일렬로 나열한 목록이나 명단 <br>
+	</p>
+	<hr>
+	<h3>1. 순서가 없는 리스트(unordered list)</h3> 
+	<p> 
+	   순서가 없는 리스트는 ul태그로 시작을 하며
+	   포함된 요소는 li태그 <br>
+	   각각의 리스트 요소앞에는 기본마커로 
+	   검정색 원이 위치합니다. 
+	</p>
+	<ul>
+		<li>구글</li>
+		<li>네이버</li>
+		<li>다음</li>
+	</ul>
+	
+	<ul type="none">
+		<li>구글</li>
+		<li>네이버</li>
+		<li>다음</li>
+	</ul>
+	<!--  
+	disc : 검정색원. 기본설정 
+	circle : 흰색작은 원모양 
+	square: 사각형 모양
+	none
+	-->
+	
+	<h3>2. 순서가 있는 리스트 (ordered list )</h3>
+	<ol>
+		<li>구글</li>
+		<li>네이버</li>
+		<li>다음</li>
+	</ol>
+	<!-- type: a, A, i, I -->
+	<ol type="I">
+		<li>구글</li>
+		<li>네이버</li>
+		<li>다음</li>
+	</ol>
+	
+	<ol type="i" start=3>
+		<li>구글</li>
+		<li>네이버</li>
+		<li>다음</li>
+	</ol>
+	
+	<ol reversed>
+		<li>구글</li>
+		<li>네이버</li>
+		<li>다음</li>
+	</ol>
+	
+	
+	<h3>3.정의 리스트 (definition list)</h3>
+	<p>
+	dl로 시작 
+	dt 태그는 용어 이름이 들어가고 dd태그는 
+	해당용어의 정의
+	</p>
+	
+	<dl>
+		<dt>용어</dt>
+			<dd>용어설명</dd>
+		<dt>축구</dt>
+			<dd>11명이 한팀이되어 발로 공을차서 몰고들어가
+			상대편 골문에 넣음으로써 승패를 겨루는 경기</dd>
+		<dt>야구</dt>
+			<dd>두팀이 야구공과 야구방망이, 야구 글러브를 사용해
+			승패를 결루는 구기종목</dd>
+	
+	</dl>
+	
+	
+</body>
+</html>

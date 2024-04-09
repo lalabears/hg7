@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>표(테이블)</title>
+</head>
+<body>
+<!-- 
+	HTML 테이블. 
+	여러종류의 데이터를 보기 좋게 정리해 보여주는 표를 의미함 
+	table태그를 사용해서 만든다.
+	table태그는 
+	1. tr - 테이블에서 열을 구분
+	2. th - 각 열의 제목을 나타냄. 모든내용은 자동으로 굵은글씨
+	3. td - 태크는 테이블열을 각각 셀(cell)로 나누어 줌 
+ -->
+ 
+ 	<table border="1">
+ 		<tr>
+ 			<td>1 번째 방</td>
+ 			<td>2 번째 방</td>
+ 			<td> 칸 </td>
+ 		</tr>
+ 		<tr>
+ 			<td>3</td>
+ 			<td>4</td>
+ 			<td> 칸 </td>
+ 		</tr>
+ 		<tr>
+ 			<td>5</td>
+ 			<td>6</td>
+ 			<td> 칸 </td>
+ 		</tr>
+ 	
+ 	</table>
+ 	
+ 	<!--  <caption> 태그
+ 	: 테이블 상단에 제목이나 짧은 설명을 붙일 수 있음
+ 	
+ 	<figure>태그 : 위치에 따라 표의 위나 아래에 제목을 표시
+ 	 -->
+ 	 <table border="1">
+ 	 <caption>테이블이름</caption>
+ 	 	<tr>
+ 	 		<td>1번째 컬럼입니다.</td>
+ 	 		<td>2번째 컬럼입니다.</td>
+ 	 	</tr>
+ 	 	<tr>
+ 	 		<td>3번째 컬럼입니다.</td>
+ 	 		<td>4번째 컬럼입니다.</td>
+ 	 	</tr>
+ 	 	<tr>
+ 	 		<td>5번째 컬럼입니다.</td>
+ 	 		<td>6번째 컬럼입니다.</td>
+ 	 	</tr>
+ 	 	<tr>
+ 	 		<td>7번째 컬럼입니다.</td>
+ 	 		<td>8번째 컬럼입니다.</td>
+ 	 	</tr>
+ 	 </table>
+	
+	
+ 	<figure>
+	<table border="1">
+ 	 	<tr>
+ 	 		<td>1번째 컬럼입니다.</td>
+ 	 		<td>2번째 컬럼입니다.</td>
+ 	 	</tr>
+ 	 	<tr>
+ 	 		<td>3번째 컬럼입니다.</td>
+ 	 		<td>4번째 컬럼입니다.</td>
+ 	 	</tr>
+ 	 	<tr>
+ 	 		<td>5번째 컬럼입니다.</td>
+ 	 		<td>6번째 컬럼입니다.</td>
+ 	 	</tr>
+ 	 	<tr>
+ 	 		<td>7번째 컬럼입니다.</td>
+ 	 		<td>8번째 컬럼입니다.</td>
+ 	 	</tr>
+ 	 </table>
+ 	 <figcaption>표만들기</figcaption>
+ 	 </figure>
+ 	 
+ 	 <!--
+ 	 	행/ 열 합치기  
+ 	 	colspan : 컬럼값들 합치기
+ 	 	rowspan : row값 합치기 
+ 	   -->
+ 	  <hr> 
+ 	 <table border="1">
+ 	 <caption>colspan사용하기</caption>
+ 	 	<tr>
+ 	 		<td colspan="2">1행1열 +1행2열</td>
+ 	 		<td>1행3열</td>
+ 	 		<td>1행4열</td>
+ 	 	</tr>
+ 	 	<tr>
+ 	 		<td colspan="3">2행1열</td>
+ 	 		<td>2행4열</td>
+ 	 	</tr>
+ 	 	<tr>
+ 	 		<td colspan="4">3행1열</td>
+ 	 	</tr>
+ 	 
+ 	 
+ 	 </table>  
+ 	 
+ 	 <table border="1">
+ 	 <caption>rowspan사용하기</caption>
+ 	 	<tr>
+ 	 		<td rowspan="2">1행1열</td>
+ 	 		<td>1행2열</td>
+ 	 		<td>1행3열</td>
+ 	 		<td rowspan="3">1행4열</td>
+ 	 	</tr>
+ 	 	<tr>
+ 	 		<td>2행2열</td>
+ 	 		<td rowspan="2">2행3열</td>
+ 	 		
+ 	 	</tr>
+ 	 	<tr>
+ 	 		<td>3행1열</td>
+ 	 		<td>3행2열</td>
+ 	 		
+ 	 		
+ 	 	</tr>
+ 	 </table>
+ 	 
+ 	 
+ 	 
+
+</body>
+</html>
