@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>a tag map</title>
+</head>
+<body>
+	
+	<img src="images/event.png" usemap="#sevent">
+	<map name="sevent">
+		
+		<!-- rect : 사각형  coords: 좌표가 들어감 
+		                          x1,y1,x2,y2
+		-->
+		<area shape="rect" coords="161,234,215,286" 
+		href="https://www.google.com"  target="_blank">
+		
+		<!-- circle : 원   coords : x,y(중심좌표),r(반지름) -->
+		<area shape="circle" coords="96,538,40" 
+		href="https://www.naver.com"  target="_blank">
+		
+		<!-- 원도아니고, 사각형도 아닐때 :다각형 
+		poly : 다각형    coords : x1,y1,x2,y2,x3,y3,....xn,yn 
+		-->
+		
+		<area shape="poly" coords="798,367,793,285,863,285,863,344"
+		href="https://www.daum.net" >
+		
+		
+		
+	</map>
+	
+</body>
+</html>
