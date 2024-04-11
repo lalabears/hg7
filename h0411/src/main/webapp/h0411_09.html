@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>input태그</title>
+</head>
+<body>
+	<!-- 사용자로부터 값을 입력받을 수 있는 태그 -->
+	문자입력 : <input type="text" name="id" 
+	placeholder="아이디를입력하세요" maxlength="5" ><br>
+	문자입력 : <input type="text" name="id" 
+	maxlength="5" value="abcd" ><br>
+	숨겨진 정보 : <input type="hidden" name="ip" value="비밀입니다"><br>
+	비밀번호 :<input type="password" name="pw"><br><br>
+	검색 : <input type="search" > <br>
+	url : <input type="url" placeholder="www.naver.com"><br>
+	email: <input type="email" name="email"><br>
+	tel : <input type="tel" name="tel"><br>
+	
+	number : <input type="number"
+	 min="1" max="10"> 개 <br>
+	range : <input type="range" min="1" max="10"><br>
+	
+	<!-- radio: 하나만 선택가능 
+	요소 name의 값을 같게 일치시켜야 함 -->
+	<input type="radio" name="ages" value="10">10대
+	<input type="radio" name="ages" value="20">20대
+	<input type="radio" name="ages" value="30">30대
+	<input type="radio" name="ages" value="40">40대
+	<input type="radio" name="ages" value="50">50대
+	
+	<br>
+	<!-- checkbox: 여러개 선택이 가능 -->
+	<input type="checkbox" name="fruit" value="apple">사과
+	<input type="checkbox" name="fruit" value="orange">오렌지
+	<input type="checkbox" name="fruit" value="mango">망고
+	<input type="checkbox" name="fruit" value="melon">멜론
+	<br>
+	색 : <input type="color" name="color"><br>
+	날짜 : <input type="date" name="bday"><br>
+	시간 : <input type="time" name="time"><br>
+	날짜와 시간 : <input type="datetime-local" ><br>
+	
+	<!-- 폼을 만든 후 사용할 버튼 전송, 리셋 -->
+	<input type="submit" value="전송">
+	<input type="reset" value="리셋">
+	<input type="button" value="클릭">
+	<input type="image" src="images/fu.jpg"  alt="이미지버튼" width="50">
+	
+	<br><br>
+	<!-- 페이지를 열었을때 마우스 커서가 위치함 -->
+	autofocus : <input type="text" name="txt1" autofocus > <br>
+	<!-- 꼭 입력해야함  -->
+	required : <input type="text" name="txt2" required ><br>
+	<!-- 읽기만가능  -->
+	readonly : <input type="text" name="txt3" value="AAA" readonly><br>
+	
+	<br><br>
+	
+	<!-- drop down 박스, 선택할 수 있게 해줌 -->
+	<select>
+		<option value="americano">아메리카노</option>
+		<option value="cafelatte">카페라떼</option>
+		<option value="espresso">에스프레소</option>
+	</select>
+	
+	<br><br>
+	<select>
+		<optgroup label="커피">
+			<option value="americano">아메리카노</option>
+			<option value="cafelatte">카페라떼</option>
+			<option value="espresso">에스프레소</option>
+		</optgroup>
+		<optgroup label="티">
+			<option value="green">녹차</option>
+			<option value="red">홍차</option>
+		</optgroup>		
+	</select>
+	<br>
+	긴글 입력 : <br>
+	<textarea name="txtarea" cols="20" rows="5" ></textarea>
+	<br><br><br><br><br>
+	
+	<input type="button" value="버튼입니다" 
+	onclick="alert('인풋버튼입니다')">
+	<button type="button" 
+	onclick="alert('버튼버튼입니다')">이미지로도 대체가능</button>
+	
+	<!-- 인풋은 텍스트로 버튼내용을 입력하는데
+	버튼의 경우는 텍스트나 이미지로 대체가 가능하다. 
+	-->
+	
+	
+	
+	
+
+</body>
+</html>

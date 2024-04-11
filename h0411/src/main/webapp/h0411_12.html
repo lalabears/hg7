@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>회원가입테이블</title>
+
+</head>
+<body>
+	<form action="#" name="frm" method="post">
+		<table>
+			<tr>
+				<th colspan="2">회원가입</th>	
+			</tr>
+			<tr>
+				<td>이름</td>
+				<td><input type="text" name="name" autofocus></td>
+			</tr>
+			<tr>
+				<td>사용자ID</td>
+				<td>
+					<input type="text" name="id" 
+					placeholder="7자까지입력가능" maxlength="7">
+				</td>
+			</tr>
+			<tr>
+				<td>암호</td>
+				<td><input type="password" name="pw"></td>
+			</tr>
+			<tr>
+				<td>암호확인</td>
+				<td><input type="password" name="pwck"></td>
+			</tr>
+			<tr>
+				<td>주민등록번호</td>
+				<td><input type="text" name="s1" size="8">-<input type="text" name="s2" size="8"></td>
+			</tr>
+			<tr>
+				<td>전화번호</td>
+				<td><input type="text" name="t1" size="4">-<input type="text" name="t2" size="4">-<input type="text" name="t3" size="4"></td>
+			</tr>
+			<tr>
+				<td>성별</td>
+				<td><input type="radio" name="gender" value="m" >남자  <input type="radio" name="gender" value="f" >여자 </td>
+			</tr>
+			<tr>
+				<td>직업</td>
+				<td>
+					<select name="job">
+						<option>선택해주세요</option>
+						<option>선생님</option>
+						<option>회사원</option>
+						<option>개발자</option>
+					</select>
+					
+				</td>
+			</tr>
+			<tr>
+				<td>email 주소</td>
+				<td><input type="email"></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="전송">
+					<input type="reset" value="취소">
+				</td>
+			</tr>
+			
+		</table>
+	</form>
+		
+</body>
+</html>
