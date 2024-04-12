@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* 주석 입니다 */
+body{ background-color:green; }
+h2{color:orange; font-size:60px;}
+p{
+	width:800px; 
+	height:50px;
+	border: 1px solid black; 
+	text-align: center;
+	color: blue; 
+	font-size: 50px;
+}
+ul{
+	color: grey;
+	list-style-type: square;
+	font-size: 20px;
+}
+	

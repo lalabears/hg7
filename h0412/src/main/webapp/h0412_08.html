@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>nowrap</title>
+	<style type="text/css">
+	body{ 
+		background-color :#d1b5a3; /* 문서 전체 배경색 */
+		/* 배경을 이미지로 가져오기 */
+		background-image: url("images/fu.jpg");
+		background-repeat: no-repeat; 
+		/* repeat, repeat-x, repeat-y, no-repeat
+		*/
+		background-size: auto; 
+		/* auto contain cover
+		auto: 원래 이미지 크기
+		contain: 요소안에 배경이 다 들어오도록 확대혹은 축소
+		cover: 배경요소를 모두 덮도록 확대/축소
+		*/
+		
+		background-position: left top; 
+		/* left center right
+		   top center bottom */ 
+		background-attachment : fixed;
+		/* 배경이미지를 고정하는 속성  
+		scroll,    fixed(화면이 스크롤되더라도 이미지 고정 ) */
+		
+	}
+	
+	div{ 
+		width: 500px; height: 100px;
+		font-size: 20px; color: navy; 
+		text-shadow : 1px 0px 1px red; 
+		border: 1px solid black; 
+		text-indent : 10px; 
+		white-space: nowrap; 
+		overflow: hidden; 
+		text-overflow: ellipsis; /* clip ellipsis*/
+	 }
+	div:hover{
+		white-space: normal;
+		overflow: scroll;  
+	
+	}
+	
+	.c1{ background-color: #025c11;
+	background-clip: content-box;
+	}
+	.c2{ 
+	background-image: url("images/bf.jpg");
+	background-clip: padding-box;
+	}
+	.c3{
+	
+	background: linear-gradient(to right bottom, red, white);
+	/* 수직 방향, 수평방향, 대각선 방향으로 그라데이션을 줄 수 있다. 
+	to top, to right
+	*/
+	background: linear-gradient(45deg, blue, white);
+	
+	/* 원형 그라데이션 */
+	background: radial-gradient(circle, white, yellow, red);
+	
+	
+	
+	}
+	
+	
+	</style>
+</head>
+<body>
+	<div>
+		유럽남방천문대(ESO) 애비게일 프로스트 박사가 이끄는 국제 연구팀은 12일 과학 저널 사이언스(Science)에서 남반구 별자리인 노마(Norma) 자리 쪽으로 3천800광년 밖에 있는 쌍성계 HD 148937을 둘러싸고 있는 화려한 용의 알 성운은 중심부의 별 2개가 충돌해 합쳐지고 남은 잔해로 분석됐다고 밝혔다.용의 알 성운은 태양보다 8배 이상 큰 별 두 개로 이루어진 쌍성계 HD 148937 주위를 둘러싼 아름다운 가스와 먼지구름이다. 이 성운은 거대한 쌍성계를 둘러싸고 있는 성운이 매우 드물 뿐 아니라 중심부 쌍성 중 하나만 자기장을 가진 자기 별(magnetic star) 이어서 그 형성과정이 수수께끼로 남아 있었다. 태양처럼 질량이 작은 별들은 내부 물질 대류로 인한 발전 현상으로 주위에 자기장이 형성될 수 있지만 내부의 대류가 없는 큰 별이 자기장을 갖는 것은 매우 이례적인 현상이다.
+	</div>
+	
+	<div class="c1">
+		유럽남방천문대(ESO) 애비게일 프로스트 박사가 이끄는 국제 연구팀은 12일 과학 저널 사이언스(Science)에서 남반구 별자리인 노마(Norma) 자리 쪽으로 3천800광년 밖에 있는 쌍성계 HD 148937을 둘러싸고 있는 화려한 용의 알 성운은 중심부의 별 2개가 충돌해 합쳐지고 남은 잔해로 분석됐다고 밝혔다.용의 알 성운은 태양보다 8배 이상 큰 별 두 개로 이루어진 쌍성계 HD 148937 주위를 둘러싼 아름다운 가스와 먼지구름이다. 이 성운은 거대한 쌍성계를 둘러싸고 있는 성운이 매우 드물 뿐 아니라 중심부 쌍성 중 하나만 자기장을 가진 자기 별(magnetic star) 이어서 그 형성과정이 수수께끼로 남아 있었다. 태양처럼 질량이 작은 별들은 내부 물질 대류로 인한 발전 현상으로 주위에 자기장이 형성될 수 있지만 내부의 대류가 없는 큰 별이 자기장을 갖는 것은 매우 이례적인 현상이다.
+	</div>
+	
+	<div class="c2">
+		유럽남방천문대(ESO) 애비게일 프로스트 박사가 이끄는 국제 연구팀은 12일 과학 저널 사이언스(Science)에서 남반구 별자리인 노마(Norma) 자리 쪽으로 3천800광년 밖에 있는 쌍성계 HD 148937을 둘러싸고 있는 화려한 용의 알 성운은 중심부의 별 2개가 충돌해 합쳐지고 남은 잔해로 분석됐다고 밝혔다.용의 알 성운은 태양보다 8배 이상 큰 별 두 개로 이루어진 쌍성계 HD 148937 주위를 둘러싼 아름다운 가스와 먼지구름이다. 이 성운은 거대한 쌍성계를 둘러싸고 있는 성운이 매우 드물 뿐 아니라 중심부 쌍성 중 하나만 자기장을 가진 자기 별(magnetic star) 이어서 그 형성과정이 수수께끼로 남아 있었다. 태양처럼 질량이 작은 별들은 내부 물질 대류로 인한 발전 현상으로 주위에 자기장이 형성될 수 있지만 내부의 대류가 없는 큰 별이 자기장을 갖는 것은 매우 이례적인 현상이다.
+	</div>
+	
+	<div  class="c3">
+		유럽남방천문대(ESO) 애비게일 프로스트 박사가 이끄는 국제 연구팀은 12일 과학 저널 사이언스(Science)에서 남반구 별자리인 노마(Norma) 자리 쪽으로 3천800광년 밖에 있는 쌍성계 HD 148937을 둘러싸고 있는 화려한 용의 알 성운은 중심부의 별 2개가 충돌해 합쳐지고 남은 잔해로 분석됐다고 밝혔다.용의 알 성운은 태양보다 8배 이상 큰 별 두 개로 이루어진 쌍성계 HD 148937 주위를 둘러싼 아름다운 가스와 먼지구름이다. 이 성운은 거대한 쌍성계를 둘러싸고 있는 성운이 매우 드물 뿐 아니라 중심부 쌍성 중 하나만 자기장을 가진 자기 별(magnetic star) 이어서 그 형성과정이 수수께끼로 남아 있었다. 태양처럼 질량이 작은 별들은 내부 물질 대류로 인한 발전 현상으로 주위에 자기장이 형성될 수 있지만 내부의 대류가 없는 큰 별이 자기장을 갖는 것은 매우 이례적인 현상이다.
+	</div>
+	<div>
+		유럽남방천문대(ESO) 애비게일 프로스트 박사가 이끄는 국제 연구팀은 12일 과학 저널 사이언스(Science)에서 남반구 별자리인 노마(Norma) 자리 쪽으로 3천800광년 밖에 있는 쌍성계 HD 148937을 둘러싸고 있는 화려한 용의 알 성운은 중심부의 별 2개가 충돌해 합쳐지고 남은 잔해로 분석됐다고 밝혔다.용의 알 성운은 태양보다 8배 이상 큰 별 두 개로 이루어진 쌍성계 HD 148937 주위를 둘러싼 아름다운 가스와 먼지구름이다. 이 성운은 거대한 쌍성계를 둘러싸고 있는 성운이 매우 드물 뿐 아니라 중심부 쌍성 중 하나만 자기장을 가진 자기 별(magnetic star) 이어서 그 형성과정이 수수께끼로 남아 있었다. 태양처럼 질량이 작은 별들은 내부 물질 대류로 인한 발전 현상으로 주위에 자기장이 형성될 수 있지만 내부의 대류가 없는 큰 별이 자기장을 갖는 것은 매우 이례적인 현상이다.
+	</div>
+	
+	
+</body>
+</html>

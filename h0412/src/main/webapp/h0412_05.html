@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>폰트적용하기</title>
+	<style>
+	/*  구글에서 폰드 가져오기 :
+	1. 구글폰트에 가서 원하는 폰트를 선택한다 
+	2. get font를 선택한다 
+	3. get embed code를 선택한다
+	4. web 아래에 import를 선택하고 @import이하를 복사한다.
+	 @import url('..'); 끝에 세미클론을 꼭 붙여준다 
+	5. 밑에 font-family  내용을 가져온다. 
+	font-family: "Gamja Flower", sans-serif;
+	font-family: "Black And White Picture", system-ui; 등과 같은 
+	원하는 선택자(태그) 아래에 font-family를 써준다.
+	*/
+	@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Do+Hyeon&family=Gamja+Flower&family=Grandiflora+One&family=Noto+Sans+KR:wght@100..900&display=swap');
+	.c1
+	{
+		/* 글꼴은 font-family */
+		font-family: "Gamja Flower", sans-serif;
+		/* 글자 크기 */
+		font-size: 10px;
+		
+		/* 글자 두께 */
+		font-weight : bold; 
+		
+		/* normal , bold, bolder, lighter */
+	}
+	.c2
+	{
+		font-family: "Do Hyeon", sans-serif;
+		font-size: 15px;
+		
+		/* 글자 두께 */
+		font-weight : 100;  /* 100 ~ 900  400:일반 700:볼드*/
+	}
+	
+	
+	/* 다운로드 받은 폰트 사용하기 :
+	1. 폰트를 다운받아 ttf파일을 webapp아래에 복사한다.
+	2. @font-face를 입력한다.  
+	@font-face{
+		font-family: "사용하고싶은폰트명영어로써준다";
+		src: url("BMJUA_ttf.ttf")format("truetype");
+		font-weight: normal;
+	} 
+	
+	3. 원하는 선택자(태그) 아래에 font-family를 사용한다. 
+	*/
+	@font-face{
+		font-family: "sung";
+		src: url("BMYEONSUNG_ttf.ttf")format("truetype");
+		font-weight: normal;
+	} 
+	.c3{
+	font-family:"sung", 돋움, 굴림, Times;
+	font-size: 20px;
+	}
+	/*
+	html{
+	font-size: 30px;
+	}*/
+	
+	.a1
+	{
+		font-variant: small-caps; 
+		/* normal :일반적인형태 small-caps: 작은대문자로표시 */
+	}
+	
+	.a2
+	{
+		color: brown; 
+		font-weight: 900;
+		font-style: italic; 
+	}
+	.a3
+	{
+		text-decoration: underline;
+		text-transform: uppercase;
+	}
+	
+	ul{
+		list-style-type: square;
+		/* disc , circle, square, none */
+		/* list-style-image: url("images/dot.png"); */ 
+	}
+	
+	ol{
+	
+		list-style-type: upper-alpha;
+		/* lower-alpha upper-alpha lower-roman upper-roman*/
+		list-style-position: inside;
+		/* outside가 기본값 inside는 살짝 안쪽으로 들여씀 */
+	}
+	
+	
+	
+	</style>
+</head>
+<body>
+<!--  c1, c2, c3에 각기 다른 폰트를 적용해보세요  -->
+	<h1>커피메뉴</h1>
+	<ol>
+		<li class="c1">아메리카노 <span class="a1">Americano</span> </li>
+		<li class="c2">카페라떼  <span class="a2">Cafe Latte</span></li>	
+		<li class="c3">에스프레소 <span class="a3">espresso</span> </li>
+	</ol>
+	
+	<ul>
+		<li class="c1">아메리카노 Americano</li>
+		<li class="c2">카페라떼 Cafe Latte</li>	
+		<li class="c3">에스프레소 espresso</li>
+	</ul>
+	
+	
+	<div style="font-size:20px">
+		<div style="font-size:1.5em">
+		30px이 된다
+		</div>
+		<div style="font-size:1em">
+		20px이 된다
+		</div>
+		<div style="font-size:0.5em">
+		10px이 된다
+		</div>
+	</div>
+	
+	<div style="font-size:1rem">
+		16px이 된다
+	</div>
+	<div style="font-size:1.5rem">
+		24px이 된다
+	</div>
+
+</body>
+</html>

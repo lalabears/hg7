@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS</title>
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<style>
+		h1{color:pink;}
+		body{color:yellow;}
+		*{
+		/* 전체 다 적용해라 */
+		
+		text-align:center; 
+		
+		}
+		span{color: blue;}
+		
+		/* 아이디는 #아이디명, 클래스는 .클래스명 
+		클래스 선택자 : 문서안에서 여러번 반복할 스타일이라면 클래스 선택자로 정의
+					마침표다음에 클래스 이름지정
+		아이디 선택자 : 문서안에서 한번만 사용할 스타일이라면 아이디 선택자로 정의 
+		            #다음에 아이디 이름지정 
+		*/
+		#continer{ background-color:pink; }
+		.rtxt{ color : brown;}
+		
+		/* 중복적으로 사용되면 콤마를 사용해서 옆에 쓸 수 있음 */
+		h3, h4{color: grey;}
+	
+	</style>
+</head>
+<body>
+
+	<h3>h3 tag </h3>
+	<h4>h4 tag </h4>
+	<h2 class="rtxt">CSS</h2>
+	<div>
+		<p id="continer" class="rtxt" >안녕하세요</p>
+		<p style="color:skyblue;">감사합니다</p>
+		<p class="rtxt">반갑습니다</p>
+	</div>
+	
+	
+	<span style="color: red;" >스타일 설정</span>
+	
+	<ul type="circle">
+		<li class="rtxt">HTML</li>
+		<li>CSS</li>
+		<li>Javascript</li>
+	</ul>
+	
+</body>
+</html>
