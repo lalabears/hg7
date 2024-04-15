@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>position</title>
+	<style>
+	/* clear 속성은 float 속성이 적용된 이후에 나타나는
+	요소들의 동작을 조절해줌. 
+	float이 나타나게되면 이후 나타나는 요소들의 위치가 불분명해짐
+	요소들을 정확한 위치에 설정하기 힘들어지기 때문에 clear를 사용해서
+	이후에 등장하는 요소들이 float의 영향을 받지 않게 해줌 
+	*/
+		div{width:100px; height:100px;}
+		.box1{background: yellow; float: right;}
+		.box2{background: blue; color: red; float:right;}
+		.box3{background: green;float:right;}
+		.box4{border: 1px solid black; 
+		
+		clear:both; /* clear : left, right, both */
+		
+		}
+	</style>
+</head>
+<body>
+ 	<div class="box1">box1</div>
+ 	<div class="box2">box2</div>
+ 	<div class="box3">box3</div>
+ 	<div class="box4">box4</div>
+ 	<p> p 태그입니다 </p>
+ 	<p> p 태그입니다 </p>
+ 	<p> p 태그입니다 </p>
+ 	<p> p 태그입니다 </p>
+ 	<p> p 태그입니다 </p>
+
+</body>
+</html>

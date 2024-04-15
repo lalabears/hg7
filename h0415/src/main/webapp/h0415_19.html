@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>position - sticky </title>
+	<style>
+	/* 
+	요소를 일반적인 문서 흐름에 따라 배치하고, 
+	스크롤되는 가장  가까운 상위요소에 오프셋 적용 
+	*/
+	
+	/*
+	visibility : 특정요소를 화면에 보이게 하는 속성 
+	*/
+	*{margin: 0 ; padding:0;}
+	div{border: 1px solid black;}
+	.box1{width: 100px; height:100px; 
+		background:blue;
+		position: sticky;
+		bottom: 0px;
+	}
+	.box2{width: 100px; height:100px; 
+		background:red;
+		visibility: hidden;
+	}
+	.box3{width: 100px; height:100px; 
+		background:green;
+		visibility: visible;
+	}
+	
+	
+	</style>
+</head>
+<body>
+	<div>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br>첫번째<br></div>
+	<div class="box1"></div>
+	<div>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br>두번째<br></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	
+</body>
+</html>

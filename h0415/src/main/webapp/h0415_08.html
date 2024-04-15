@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>border-radius</title>
+	<style>
+	div{ width: 100px; height:100px; margin:10px;
+	border: 2px solid red; /*2px짜리 빨간 실선*/
+	}
+	.round{
+	border-radius: 20px; /* 모서리를 20px 만큼 라운딩*/
+	}
+	.roundtop{
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	}
+	.roundtlbr{
+	border-top-left-radius: 20px;
+	border-bottom-right-radius:20px;
+	}
+	.rd1{
+	border-radius: 50px 10px 20px 30px; background:pink;
+	}
+	.rd2{
+	border-top-left-radius:100px 50px;
+	}
+	.rd3{
+	border-bottom-right-radius:50% 30%;
+	}
+	#bg{
+	background: url("images/fu.jpg") no-repeat;
+	background-size: cover;
+	border-color:white;
+	}
+	</style>
+</head>
+<body>
+	<div class="round"></div>
+	<div class="roundtop"></div>
+	<div class="roundtlbr"></div>
+	<div class="rd1"></div>
+	<div class="rd2"></div>
+	<div class="rd3"></div>
+	<div class="round" id="bg"></div>
+</body>
+</html>

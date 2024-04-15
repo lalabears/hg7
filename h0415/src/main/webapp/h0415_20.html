@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>포지션 예제</title>
+	<style>
+	*{margin:0; padding: 0;}
+	body{height: 3000px;}
+	#main{width: 500px; height: 500px; 
+	border: 1px solid black;}
+	.c01,.c02,.c03,.c04,.c05 {	width: 30px; height: 30;
+	background: yellow;	font-size:20px; border: 1px solid black;
+	text-align: center; 
+	}
+	/* position :
+	 relative, absolute, fixed 
+	 relative : 즉, left, top을 이용해서 원하는 위치에 위치시킴 
+	 absolute : 문서의 흐름과 상관없이 원하는 위치에 요소를 배치 
+	*/
+	.c01{position: relative; top: 472px; left : 469px;
+	 z-index: 2; }
+	.c02{position: absolute; top: 0px; left : 439px;}
+	.c03{position: relative; top: 444px; left:90px; }
+	.c04{position: absolute; top: 235px; left: 235px;}	
+	.c05{position: fixed; top:235px; left:469px;
+		  z-index: 1; }
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div class="c01">1</div>
+		<div class="c02">2</div>
+		<div class="c03">3</div>
+		<div class="c04">4</div>
+		<div class="c05">5</div>
+	</div>
+</body>
+</html>

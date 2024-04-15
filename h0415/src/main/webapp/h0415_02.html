@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>레이아웃</title>
+	<style type="text/css">
+	/* 블록 요소들 : div, hn, p
+	   인라인 요소들 : span, b, i, strong.. a img
+	*/
+	.box1{ 
+		width: 200px; /* 고정 너비 */
+		height: 100px;/* 고정 높이 */
+		background: orange; /* 배경색*/
+	}
+	.box2{
+		width: 50%; /*가변 너비 - 브라우저 창의 50% */
+		height: 100px;
+		background:blue;
+	}
+	
+	h2{ display: inline;
+	 /*블록레벨요소를 인라인으로 처리*/
+	}
+	span{display:block; /* 인라인 요소를 블록레벨로 처리*/
+	}
+	
+	a{ /*인라인 요소임 */
+	display: inline-block; /* 인라인을 블록형태로 만들어줘서 높이 지정이 가능*/
+	height: 100px;
+	border: 1px solid black; 
+	}
+	
+	.sp{
+	display: inline;
+	}
+	</style>
+</head>
+<body>
+	<div class="box1">세종=연합뉴스) 이준서 민경락 기자 = 정부가 이란의 이스라엘 공격으로 악화한 '중동 사태'와 관련, 이달 말 종료를 앞둔 유류세 인하 조치를 두 달 더 연장하기로 했다.</div>
+	<div class="box2">최상목 부총리 겸 기획재정부 장관은 15일 오전 정부서울청사에서 주재한 '비상경제장관회의' 모두발언에서 "민생의 부담이 가중되지 않도록 현재의 유류세 인하 조치와 경유·압축천연가스(CNG) 유가연동보조금을 6월 말까지 2개월 추가 연장하겠다"고 밝혔다.</div>
+	
+	<div class="box1"> div1 </div>
+	<div class="box2"> div2 </div>
+	
+	<h2>HTML</h2>
+	<h2>CSS</h2>
+	
+	
+	
+	<span>JAVA</span>
+	<span>JSP</span>
+	
+	<a href="#">a태그</a>
+	<span class="sp"> span 태그 인라인요소입니다 </span>
+	
+	<img src="images/mic.jpg">
+</body>
+</html>

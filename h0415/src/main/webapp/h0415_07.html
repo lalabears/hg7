@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>테두리 그려보기</title>
+	<style>
+	div{ height:200px; width:200px; /* 높이 너비 설정을 통해 박스그림 */
+	 display: inline-block; /* 블록을 한줄로 표현 */
+	  margin: 20px; /* 블록사이 간격 조정 */}
+	 
+	.box1{ /* 4면이 실선 */
+	/* border-style: solid; border-color: blue;
+	border-width: 3px; 1개만 씀 : 즉 4면이 같은두께 */
+	border : 3px solid blue;
+	}
+	.box2{
+	border-style: solid; 
+	border-width: 3px 5px;
+	border-color: blue;
+	border-top-color: green;
+	
+	}
+	.box3{
+	border-style : dotted;
+	border-color: blue;
+	border-width: 3px 5px 1px 2px;
+	}
+	.box4{
+	border : thick dashed blue;
+	}
+	.box5{
+	border : 2px dotted black;
+	
+	}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	<div class="box4"></div>
+	<div class="box5"></div>
+
+</body>
+</html>

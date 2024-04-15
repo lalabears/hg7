@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>position - relative , absolute </title>
+	<style>
+	/* relative : 
+	 요소를 일반적인 흐름에 따라 배치하되,
+	 상하좌우 위치 값에 따라 위치를 이동. 즉, left, top을 
+	 이용해서 원하는 위치에 위치시킴 
+	*/
+	/* absolute :
+	요소의 일반적인 흐름을 제거하고 
+	상위요소중 가장 가까운 표지션 지정 요소에 대해서 상대적으로
+	위치지정  
+	즉. 문서의 흐름과 상관없이 원하는 위치에 요소를 배치 
+	*/
+	*{margin:0; padding:0;}
+	div{width:100px; height:100px; }
+	.box1{background: blue; 
+		position: relative; left: 50px;}
+	.box2{background: red;
+		position: relative;
+		top: 20px; left:20px;
+	}
+	.box3{background: green; 
+	position: absolute; top:20px;}
+	.box4{background: pink; 
+	position: absolute; left:120px;}
+	</style>
+</head>
+<body>
+
+	<div class="box1"></div>
+	<div class="box2">
+		<div class="box4"></div>
+	</div>
+	<div class="box3"></div>
+
+</body>
+</html>
