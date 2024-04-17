@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>가로선만 있는 표</title>
+	<style type="text/css">
+	table{ 
+	    /* 테이블 테두리 */ 
+		border-collapse: collapse;
+		width: 500px;
+		border-spacing: 20px 10px; 
+		table-layout: fixed;
+	}
+	td{ /*셀 테두리 */
+		border-bottom: 1px solid black;
+		/* 아래선만그려라 */
+		border-top: 1px solid black;
+		/* 윗선만그려라 */
+		padding : 10px;
+		height: 50px;
+		text-align: center;
+		empty-cells: hide;	
+	}
+	
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>대전</td>
+			<td>기아 vs 한화</td>
+		<tr>
+			<td>대구</td>
+			<td>NC vs 삼성</td>
+		</tr>
+		<tr>
+			<td>수원</td>
+			<td>SSG vs KT</td>
+		</tr>
+		<tr>
+			<td>서울</td>
+			<td></td>
+		</tr>
+	
+	
+	</table>
+
+</body>
+</html>

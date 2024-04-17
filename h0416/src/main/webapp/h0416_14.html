@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>선택자-기본</title>
+	<style>
+	/*
+	 -   * { 속성: 값; } 전체 선택자
+	 - html요소 선택자(태그)
+	 	 h1 {속성 : 값; }	 
+	 - id 선택자 
+	     #아이디명 { 속성 : 값 ; }  
+	 - class 선택자 
+	     .클래스명 { 속성 : 값; }   
+	 - 그룹 선택자 
+	     h1, h2 { 속성: 값 } 
+	*/
+	*{color:blue; height: 50px; width: 200px;  }
+	
+	h1{background: blue; color: white;}
+	#i1{background: pink;}
+	.c1{text-decoration: line-through;}
+	h1, h2 { text-align: center; }
+	
+	
+	div{width: 500px; height: 200px; border: 1px solid black;}
+	#i2{padding:20px;}
+	</style>
+</head>
+<body>
+	<h1>HTML</h1>
+	<h2 id="i1" class="c1">JAVASCRIPT</h2>
+	<h3 class="c1">CSS</h3>
+	<div id="i2">div tag1</div>
+	<p>이것은 p태그 문단입니다 </p> 
+	<div class="c1">div tag2</div>
+</body>
+</html>

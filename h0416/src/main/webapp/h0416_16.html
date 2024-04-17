@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>선택자</title>
+	<style type="text/css">
+	nav li {color: red;} /* 자식 + 손자 */
+
+	
+	#guide > ul { border: 1px solid black; } /* 자식만 */
+	
+	h2 + ul {color: green; font-weight: 700;}
+	/* h2의 바로 밑에 동생 . 가장 인접한 형제만 스타일 적용 */
+	h2 ~ ul {color: violet; font-weight: 700;}
+	 /* 형제 모두 다 - */
+	
+	</style>
+</head>
+<body>
+	<header>
+		<h1>게스트 하우스</h1>
+		<nav class="nav1">
+			<ul>
+				<li>이용 안내</li>
+				<li>객실 소개</li>
+				<li>예약 방법 및 요금</li>
+				<li>예약 하기</li>
+			</ul>
+		</nav>
+	</header>
+	<section id="guide">
+		<h2>예약 방법 및 요금</h2>
+		<ul>
+			<li>예약 방법</li>
+			<li>요금</li>
+		</ul>
+		<ul>
+			<li>예약 방법
+				<ul>
+					<li>직접 통화하기</li>
+					<li>문자 남기기</li>
+				</ul>
+			</li>
+			<li>요금
+				<ul>
+					<li>1인 : 40,000원</li>
+					<li>2인 : 60,000원</li>
+					<li>3인 : 80,000원</li>
+					<li>4인 : 100,000원</li>					
+				</ul>
+			</li>
+		</ul>
+	</section>
+	
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>비디오</title>
+	<style>
+		video{ 
+		width: 800px; height:auto; 
+		/* 비디오 크기 조절 */
+		
+		/*
+		controls : 컨트롤 바 
+		preload 재생하기 전에 비디오를 다운받을것인지.. 
+		일부 정보만 받을 것인지 
+			- none : 재생버튼을 눌러야 다운이 시작 
+			- metadata : 파일전체를 받는게 아니라 메타 정보만 다운받겟다
+			- auto: 기본값. 문서를 로드할때 모두 다운받겟다 . 
+		muted : 소리끄고 화면만재생 
+		autoplay : 다운로드하자마자 재생 
+		loop: 반복재생 
+		*/
+		
+		/* track 태그 - 비디오에 외부 자막파일을 연결하는 태그 
+		src - 자막의 텍스트파일 경로지정 
+		srclang - 사용언어 지정
+		label - 자막이 여러개일 경우, 식별제목 
+		default - 기본을 지정 
+		*/
+		
+		}
+	</style>
+</head>
+<body>
+	
+	<video src="media/v1.mp4" autoplay muted></video>
+	
+	<video autoplay controls >
+		<source src="media/Painting.mp4" type="video/mp4">
+		<track src="media/Painting.vtt" srclang="ko" label="Korean" default>
+	</video>
+
+</body>
+</html>

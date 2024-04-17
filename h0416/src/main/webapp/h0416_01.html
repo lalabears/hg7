@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>테이블 스타일</title>
+	<style type="text/css">
+	table{ /* 테이블 테두리 */ 
+		border: 1px solid black;
+		/*border-collapse: collapse;
+		 표 테두리와 셀 테두리를 합칠 것인지 설정 
+		collapse : 합치겟다
+		seperate: 따로 표시(기본값)
+		*/
+		width: 500px;
+		/* 너비나 높이를 지정하지 않으면 셀 내용이 보이는 
+		 만큼만 표시
+		 padding등의 속성을 사용해서 여백을 넣어줄 수 있음
+		
+		*/
+		border-spacing: 20px 5px; 
+		/*
+		border-collapse: seperate;인 경우 셀들을 분리했을때
+		인접한 셀 테두리 사이의 거리를 지정
+		값이 1개면 수직 수평거리가 같고, 값이 2개면 수평, 수직 순 
+		*/
+		
+		table-layout: fixed;
+		/* 셀 안의 내용에 따라 셀 너비를 변할지 고정시킬지를 결정
+		fixed: 셀 너비 고정 
+		*/
+		
+	}
+	td{ /*셀 테두리 */
+		border: 1px solid black; 
+		padding : 10px;
+		height: 50px;
+		text-align: center;
+		empty-cells: hide;
+		/* border-collapse: seperate;인 경우 
+		  내용이 없는 셀의 표시여부 hide, show  */
+		
+		  
+	
+	}
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>대전</td>
+			<td>기아 vs 한화</td>
+		<tr>
+			<td>대구</td>
+			<td>NC vs 삼성</td>
+		</tr>
+		<tr>
+			<td>수원</td>
+			<td>SSG vs KT</td>
+		</tr>
+		<tr>
+			<td>서울</td>
+			<td></td>
+		</tr>
+	
+	
+	</table>
+
+</body>
+</html>
