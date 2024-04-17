@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>transform-scale</title>
+	<style>
+	.origin {
+		border: 1px solid black; 
+		width: 230px;
+		height: 230px;
+		float: left;
+		margin: 40px;
+		/*overflow: hidden;*/ 
+	}
+	.scalex:hover{
+		transform: scaleX(1.2);
+		/* x 축으로 1.2배 늘려라 */
+		
+	}
+	.scaley:hover{
+		transform: scaleY(1.5);
+		/* y 축으로 1.5배 늘려라 */
+		
+	}
+	
+	.scale:hover{
+		transform: scale(0.7);
+		
+	}
+	
+	.origin2 {
+		border: 1px solid black; 
+		width: 230px;
+		height: 230px;
+		float: left;
+		margin: 40px; 
+		overflow: hidden;
+	}
+	.scale2:hover{
+		transform: scale(1.2);
+		
+	}
+	
+	
+	</style>
+</head>
+<body>
+	<div class="origin">
+		<div class="scalex">
+			<img src="images/q.jpg">
+		</div>
+	</div>
+	
+	<div class="origin">
+		<div class="scaley">
+			<img src="images/q.jpg">
+		</div>
+	</div>
+	
+	<div class="origin">
+		<div class="scale">
+			<img src="images/q.jpg">
+		</div>
+	</div>
+	
+	<div class="origin2">
+		<div class="scale2">
+			<img src="images/q.jpg">
+		</div>
+	</div>
+</body>
+</html>

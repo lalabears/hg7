@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>가상클래스와 가상요소</title>
+	<style type="text/css">
+	/*
+	 :link - 방문하지 않은 링크에 스타일 적용
+	 :visited - 방문한 링크에 스타일 적용
+	 :active - 웹요소를 활성화햇을때 스타일 적용(클릭햇을때)
+	 :hover - 마우스 커서를 올렸을때 스타일 적용 
+	 :focus - 초점이 맞추어 졌을때 스타일 적용 
+	*/
+	
+	a:link { color : red; text-decoration: none; }	
+	a:visited { color: green; }
+	a:hover{font-size: 50px; }
+	h1:active{text-decoration:underline;}
+	a:focus{font-style: italic;}
+	
+	</style>
+</head>
+<body>
+	<h1>웹사이트</h1>
+	<ul>
+		<li><a href="https://www.naver.com" target="_blank" name="ko">네이버</a></li>
+		<li><a href="https://www.google.com" name="kogoogle">구글</a></li>  
+		<li><a href="https://www.daum.net" target="_self" class="button" name="ko-site">다음</a></li>
+		<li><a href="https://www.yahoo.co.jp" class="flat button" name="japanese">야후</a></li>
+	</ul>
+
+</body>
+</html>

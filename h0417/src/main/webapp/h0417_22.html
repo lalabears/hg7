@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+	/* 배경색 : 빨 초 파 */
+	/* 1. rotate(45deg) */
+	/* 2. 모양바꾸려면 border-radius: 50%  */
+	div{width:100px; height:100px; background: red;
+	margin:100px;}  /* 정사각형 빨강 박스를 만들어라 */
+	
+	.box1{ 
+		animation: background 3s infinite, rot 1s;
+	}
+	.box2{
+		animation: background 5s, shape 2s infinite;
+	}
+	@keyframes background {		
+		0% { background :  red;	}
+		50% {background :  green;}
+		100%{background :  blue;}
+	}
+	@keyframes rot {
+		from{transform: rotate(0deg);}
+		to{transform: rotate(45deg);}
+	}
+	@keyframes shape{
+		from{border: 1px solid black; }
+		to{border: 1px solid black;
+			border-radius: 50%;}
+	}
+	
+	
+	
+	</style>
+</head>
+<body>
+
+
+	<div id= "b1" class="box1" name="boxA" ></div>
+	<hr>
+	<div id ="b2" class="box2"></div>
+
+</body>
+</html>

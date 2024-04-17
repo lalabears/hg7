@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Transform-origin</title>
+	<style>
+	.origin {
+		border: 1px solid black; 
+		width: 230px;
+		height: 230px;
+		float: left;
+		margin: 40px; 
+	}
+	.im{ transform: rotateZ(20deg);
+	
+	 }
+	.ltop .im{
+		transform-origin: left top;
+	}
+	.rtop .im{
+		transform-origin: right top;
+	}
+	.lbottom .im{
+		transform-origin: left bottom;
+	}
+	.rbottom .im{
+		transform-origin: right bottom;
+	}
+	
+	</style>
+</head>
+
+<body>
+	<div class="origin">
+		<div class="ltop">
+			<img src="images/q.jpg" class="im">
+		</div>
+	</div>
+	
+	<div class="origin">
+		<div class="rtop">
+			<img src="images/q.jpg"  class="im">
+		</div>
+	</div>
+	
+	<div class="origin">
+		<div class="lbottom">
+			<img src="images/q.jpg"  class="im">
+		</div>
+	</div>
+	
+	<div class="origin">
+		<div class="rbottom">
+			<img src="images/q.jpg" class="im">
+		</div>
+	</div>
+	
+</body>
+</html>

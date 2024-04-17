@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>변형-앞뒤</title>
+	<style>
+	/* 요소의 뒷면을 표시할 것인지 결정 
+	backface-visibility 
+	visible - 보이게
+	hidden - 숨김 
+	*/
+	.box{
+		width:100px;
+		height: 100px;
+		margin: 100px;
+		line-height: 100px;
+		text-align: center; 
+		background: #ff0;
+		transition: 0.8s;
+	}
+	.box1{backface-visibility: visible;}
+	.box2{backface-visibility: hidden;}
+	.box:hover{transform: rotateY(180deg);}
+	</style>
+</head>
+<body>
+	<div class="box box1">앞</div>
+	<div class="box box2">앞</div>
+
+</body>
+</html>

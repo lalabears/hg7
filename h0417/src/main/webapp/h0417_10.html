@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+	/*
+	1. 수박, 배 자두 : 굵은 글씨 font-weight: 600 , 배경이 핑크
+	   -> nth-child()
+	2. 배에 nth-child()를 사용해서 초록으로
+	3. 포도를 :nth-of-type() 사용 
+	4. hover햇을때 노랑 
+	*/
+	li{ border: 1px solid black; 
+	   width: 150px; height: 40px; line-height: 2.5 ;
+	   text-align: center; list-style-type: none;}
+	   
+	ul li:nth-child(2n+1){font-weight: 600; background:pink;} 	
+	ul li:nth-child(5){background:green;}
+	ul li:nth-of-type(5){background:blue;}
+
+	ul li:hover{background: yellow; }   
+	
+	</style>
+</head>
+<body>
+ 	<h2>과일종류</h2>
+	   <ul>
+	     <h3>과일이름</h3>
+	     <li>사과</li>
+	     <li>수박</li>
+	     <li>참외</li>
+	     <li>배</li>
+	     <li>포도</li>
+	     <li>자두</li>
+	     <li>딸기</li>
+	   </ul>
+</body>
+</html>

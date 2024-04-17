@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+	.box1{ width:100px; height:100px; background:orange;
+	transition : width 1s height 5s;
+	}
+	.box1:hover{ width: 300px; height: 300px;}
+	
+	h1{ text-align: center; font-size: 52px; }
+	.tr1{width: 100px; height: 100px; 
+		background-color:red;  border: 1px solid black;
+		
+		transition-duration: 2s, 3s ; 
+	}
+	.tr1:hover{width:200px; height:200px; background: tomato;
+	transform: rotate(180deg);
+	}
+	
+	div.box{ width: 100px; height: 100px; margin:100px; 
+	background: skyblue;
+	transition: 2s linear;
+	}
+	.box:hover{
+		transform: scale(2) perspective(120px) rotateX(180deg);
+	}
+	
+	</style>
+</head>
+<body>
+	<p>가로세로너비변환</p>
+	<div class="box1"></div>
+	
+	<hr>
+	<p>180도돌고, 크기도 커지고, 색도 변함</p>
+	<div class="tr1"><h1>!</h1> </div>
+	
+	<hr>
+	<p>원근감주고 (120px) . 크기 커지고 x축 방향으로 회전</p>
+	<div class="box"></div>
+</body>
+</html>

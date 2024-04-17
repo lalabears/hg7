@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>가상요소 실습</title>
+	<style>
+	/* 1. 마우스를 이미지에 올렷을때 굵은 테두리를 그리세요
+	
+	 border: 5px solid black;  */
+	 /*.top-img{width: 200px;}*/
+	 .top-img:hover { border: 5px solid black;  }
+	
+	/* 2. 
+	2-1 입력할 수 없는 인풋 박스는 빨간색으로 , 
+	2-2 입력 가능한 인풋박스는 파란색으로 
+	2-3 라디오나 체크박스가 체크 되었을때 초록글씨로 
+	2-4 전송버튼을 눌럿을때 토마토 색으로 
+	2-5 리셋버튼에 마우스를 올렷을때 핑크색으로 변하게 해보세요 
+	input[type="text"]:enabled
+	checked :disabled :enabled 
+	hover, active 
+	*/
+	
+	input[type="text"]:disabled{background:red;}
+	input[type="text"]:enabled{background:blue;}
+	input:checked + label{color:green;}
+	input[type="submit"]:active{background: tomato; }
+	input[type="reset"]:hover{background:pink;}
+	
+	
+	</style>
+</head>
+<body>
+	<p>이미지위로 마우스 올려보세요</p>
+	<img src="images/fu.jpg" class="top-img">
+	<div>
+		 <form name="frm2" action="#" method="post">
+		 <label for="id">아이디</label>
+		 <input type="text" name="id" value="aaa" disabled> <br><br>
+		 <label for="pw">비밀번호</label>
+		 <input type="text" name="pw"> <br><br>
+		 
+		 <fieldset>
+			 <legend>성별</legend>
+			 <input type="radio" name="gender" value="male" id="male">
+			 <label for="male">남자</label>
+			 <input type="radio" name="gender" value="female" id="female">
+			 <label for="female">여자</label>
+		 </fieldset>
+		 <br>
+		 <fieldset>
+		 	 <legend>광고메일신청</legend>
+			
+			 <input type="radio" name="ad" value="yes" id="yes">
+			 <label for="yes">네</label>
+			 <input type="radio" name="ad" value="no" id="no">
+			 <label for="no">아니오</label>
+		 </fieldset>
+		 <br>
+		 <input type="submit" value="로그인">
+		 <input type="reset" value="입력취소">	
+		 <input type="button" value="그냥버튼">
+		 
+		 
+		 
+	 </form>
+		
+	
+	</div>
+
+</body>
+</html>

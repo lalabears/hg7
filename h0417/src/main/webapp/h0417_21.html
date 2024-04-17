@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>애니메이션 실습</title>
+	<style type="text/css">
+	div{width:100px; height:100px; background: red; 
+	position: relative; 
+	animation: mv 5s infinite;
+	}
+	@keyframes mv{
+		/*
+		from{
+			top: 0px; background: red; width:100px;
+		}
+		50% { }
+		to{
+			top: 200px; background: yellow; width: 300px;
+		}
+		*/
+		
+		0% {
+		top: 0px; background: blue; width:100px;
+		}
+		50% {
+		top: 200px; background: purple; width: 300px;
+		}
+		100%{
+		top: 0px; background: blue; width:100px;
+		}
+	
+	}
+	
+	
+	
+	</style>
+	
+</head>
+<body>
+	<div></div>
+
+</body>
+</html>

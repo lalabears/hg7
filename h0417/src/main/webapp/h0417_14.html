@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>transform-rotate3D</title>
+	<style>
+	.origin {
+		border: 1px solid black; 
+		width: 230px;
+		height: 230px;
+		float: left;
+		margin: 40px;
+		
+		/* 
+		원근감을 가지게 함. 0보다 커야함 
+		값이 크면클수록 사용자와 멀어짐 */
+		perspective: 200px;
+	}
+	.rotatex:hover{
+		transform: rotateX(45deg);
+	}
+	.rotatey:hover{
+		transform: rotateY(45deg);
+	}
+	.rotatez:hover{
+		transform: rotateZ(45deg);
+	}
+	.rotateyxyz:hover{
+		transform: rotate3d(2.5, 1.2, -1.5, 45deg);
+		/*                   rx  ry  rz  각도  */
+	}
+	
+	
+	</style>
+</head>
+<body>
+	<div class="origin">
+		<div class="rotatex">
+			<img src="images/q.jpg">
+		</div>
+	</div>
+	
+	<div class="origin">
+		<div class="rotatey">
+			<img src="images/q.jpg">
+		</div>
+	</div>
+	
+	<div class="origin">
+		<div class="rotatez">
+			<img src="images/q.jpg">
+		</div>
+	</div>
+	
+	<div class="origin">
+		<div class="rotatexyz">
+			<img src="images/q.jpg">
+		</div>
+	</div>
+	
+	
+	
+
+
+</body>
+</html>

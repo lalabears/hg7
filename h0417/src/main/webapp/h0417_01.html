@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>속성 선택자</title>
+	<style>
+	/* 지정한 속성을 가진 요소를 찾아서 스타일을 적용
+	 속성 { color: blue; }*/
+	a[href]{background: #D5E0C7;}
+	/* a 태그 중에 href속성이 있는 요소를 찾아내서 스타일을 적용(배경을 노랑으로)*/
+	
+	/*[속성 = 값] { color: blue;}
+	 주어진 속성과 속성 값이 일치하는 경우 요소를 찾아서 스타일을 적용
+	*/
+	a[target="_blank"]{font-weight: 800; background: pink; color: navy;}
+	/* a 태그 속성 중 target이 _blank 인 요소만 찾아서 스타일을 적용 */
+	
+	/* [속성~=값]{ color: blue; }
+		값이 포함된 요소를 찾아서 스타일을 적용해라 
+	*/
+	[class ~= "button"] {border: 2px solid black;}
+	/* 클래스명에 버튼이라고 써잇는 것들을 찾아서 스타일을 적용 */ 
+	
+	/* [속성 |= 값 ] {color:blue;}
+	    특정한 값이 포함된 속성을 가진 요소를 찾아서 스타일을 적용(하이픈으로 연결된것도 ok)
+	*/
+	a[name |= "ko" ]{color: red; text-decoration:none; }
+	/* a 태그 속성 중 name값에 ko나 ko- 가 있는 경우 스타일을 적용 */
+	
+	/* [속성 ^= 값] { color: blue }
+	특정값으로 시작하는 속성을 가진 요소를 찾아서 스타일을 적용
+	*/
+	a[name ^= "jap"] { color : black; text-decoration:none; }
+	/* a태그 속성 중 name 값에 jap로 시작하는 값을 가진 요소를 찾아서 스타일을 적용 */
+	
+	/* [속성 $= 값] {color: blue;}
+	  특정값으로 끝나는 속성을 가진 요소를 찾아서 스타일을 적용
+	*/
+	a[href $= "net"]{color: green; text-decoration: none; }
+	/* a태그 속성 중 href값에 net으로 끝나는 요소를 찾아서 스타일을 적용 */
+	
+	/* [속성 *= 값] { color: blue ;}
+	  특정값 일부가 일치하는 속성
+	*/
+	a[href *= "co"]{ font-size:50px; }
+	/* a 태그 속성 중 href값에 co가 있는 요소를 찾아서 스타일을 적용 */
+	</style>
+</head>
+<body>
+	<h1>웹사이트</h1>
+	<ul>
+		<li><a href="https://www.naver.com" target="_blank" name="ko">네이버</a></li>
+		<li><a href="https://www.google.com" name="kogoogle">구글</a></li>  
+		<li><a href="https://www.daum.net" target="_self" class="button" name="ko-site">다음</a></li>
+		<li><a href="https://www.yahoo.co.jp" class="flat button a b" name="japanese">야후</a></li>
+	</ul>
+	
+	<ul>
+		<li><a>메인 메뉴:</a></li>
+		<li><a href="#">메뉴 1</a></li>
+		<li><a href="#">메뉴 2</a></li>
+		<li><a href="#" name="jap1abc">메뉴 3</a></li>
+		<li class="button"><a href="#">메뉴 4</a></li>
+	</ul>
+	
+	
+
+</body>
+</html>

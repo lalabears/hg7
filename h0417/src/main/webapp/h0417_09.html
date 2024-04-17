@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+	/*
+	1. 수박, 배 자두 : 굵은 글씨 font-weight: 600 , 배경이 핑크
+	2. hover햇을때 노랑 
+	3. 포도를 :nth-last-child(n) 를 사용 
+	4. 배에 nth-child()를 사용해서 초록으로 
+	*/
+	
+	/*  :nth-child(n)      - 앞에서부터 n번째 자식요소에 스타일 적용
+	    :nth-last-child(n) - 뒤에서부터 n번째 자식요소에 스타일 적용
+	   
+		    위치를 나타낼때 an+b 처럼 나타낼 수 도 있음 
+    */
+    
+    /*
+	 :link - 방문하지 않은 링크에 스타일 적용
+	 :visited - 방문한 링크에 스타일 적용
+	 :active - 웹요소를 활성화햇을때 스타일 적용(클릭햇을때)
+	 :hover - 마우스 커서를 올렸을때 스타일 적용 
+	 :focus - 초점이 맞추어 졌을때 스타일 적용 
+	*/
+	
+	
+		
+	li{ border: 1px solid black; 
+	   width: 150px; height: 40px; line-height: 2.5 ;
+	   text-align: center; list-style-type: none;}
+	
+	ul li:nth-child(2n){font-weight: 600; background:pink;} 	
+	ul li:nth-last-child(3){background: blue;}	
+	ul li:nth-child(4){background: green;}
+	ul li:hover{background: yellow; }
+	
+	</style>
+</head>
+<body>
+ 	<h2>과일종류</h2>
+	   <ul>
+	   
+	     <li>사과</li>
+	     <li>수박</li>
+	     <li>참외</li>
+	     <li>배</li>
+	     <li>포도</li>
+	     <li>자두</li>
+	     <li style="background: violet;">딸기</li>
+	   </ul>
+</body>
+</html>

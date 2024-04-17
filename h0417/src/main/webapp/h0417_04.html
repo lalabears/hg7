@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>가상요소 실습</title>
+	<style>
+	/* 기본글자는 주황색으로 만들고, 
+	
+	   글자에 마우스를 올렷을때는 파랑색으로
+	   글자를 클릭햇을때는 빨강색으로 
+	*/
+	h1{ color:orange; font-size: 30px; }
+	h1:hover{ color:blue; } 
+	h1:active{ color:red; }
+	
+	/* 버튼의 기본색을 tomato 색, 버튼 글자색은 white 
+	   버튼에 마우스를 올렸을때 색을 배경색을 gray로 .. 
+	*/
+	
+	/*[속성 = 값] { color: blue;} 
+			ex)  [target="_blank"]{color:blue;}
+	 주어진 속성과 속성 값이 일치하는 경우 요소를 찾아서 스타일을 적용
+	*/
+	[type="button"]{background: tomato; color: white; } 
+	/* h0417_01 참고 */
+	[type="button"]:hover{background: gray; } 	
+	/* h0417_03 참고 */
+	
+	</style>
+</head>
+<body>
+	<h1>HTML+CSS</h1>
+	
+	<input type="button" value="버튼"> 
+</body>
+</html>

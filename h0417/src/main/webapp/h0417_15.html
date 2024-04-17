@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>transform-skew</title>
+	<style>
+	/* 요소를 지정한 각도만큼 비튼다 */
+	.origin {
+		border: 1px solid black; 
+		width: 230px;
+		height: 230px;
+		float: left;
+		margin: 40px; 
+	}
+	.skewx:hover{
+		transform: skewX(30deg);
+		/* x 축으로 30도만큼 비튼다 */
+	}
+	.skewy:hover{
+		transform: skewY(15deg);
+		/* y 축으로 15도만큼 비튼다 */
+	}
+	
+	.skewxy:hover{
+		transform: skew(25deg, -15deg);
+		/* x, y 축으로 이동 */
+	}
+	
+	
+	
+	</style>
+</head>
+<body>
+	<div class="origin">
+		<div class="skewx">
+			<img src="images/q.jpg">
+		</div>
+	</div>
+	
+	<div class="origin">
+		<div class="skewy">
+			<img src="images/q.jpg">
+		</div>
+	</div>
+	
+	<div class="origin">
+		<div class="skewxy">
+			<img src="images/q.jpg">
+		</div>
+	</div>
+</body>
+</html>
