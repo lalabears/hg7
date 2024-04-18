@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>가변형 레이아웃</title>
+	<style>
+	/* 모든 내용이 wrapper에 감싸져 있음. % 
+	꽉차게 하고싶으면 wrapper = 100% 
+	비율을 계산해서 요소의 너비로 사용한다. 
+    */
+	#wrapper{ width : 80% ; margin: 0 auto; }
+	header{width: 100%; height: 120px; background: blue; }
+	.content{float: left; width: 65%; height: 1000px; 
+	 		 background: yellow; 
+	 }
+	.right-side{float:right; width: 35%; height: 1000px;
+			background: green;  
+	}
+	footer{ clear:both; width: 100% ; height: 120px; 
+			background: brown; 
+	}	
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<header>헤더</header>
+		<div class="content">본문</div>
+		<div class="right-side">사이드바</div>
+		<footer>푸터</footer>
+	</div>
+
+</body>
+</html>

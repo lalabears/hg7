@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>미디어쿼리</title>
+	<style type="text/css">
+	@media screen and (min-width: 1000px){
+		.mobile{ display: none; }
+	}
+	@media screen and (min-width: 200px) and (max-width:1000px){
+		.desktop{ display: none; }
+	}
+	
+	</style>
+</head>
+<body>
+	<ul>
+		<li class="desktop">저는 넓은 화면에서만 보입니다</li>
+		<li>저는 항상 보입니다.</li>
+		<li class="mobile">저는 작은 화면에서만 보입니다.</li>
+	</ul>
+</body>
+</html>

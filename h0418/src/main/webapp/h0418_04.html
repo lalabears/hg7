@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>가변이미지</title>
+	<style>
+		*{margin: 0 auto; }
+		.c1 img{ max-width:100%; height: auto;}
+	</style>
+</head>
+<body>
+	<h1>원래이미지</h1>
+	<div class="c">
+		<img src="images/c3.jpg">
+	</div>
+	
+	<hr>
+	
+	<h1> 1. CSS로 가변요소 적용 </h1>
+	<div class="c1">
+		<img src="images/c3.jpg">
+	</div>
+	
+	<hr>
+	
+	<h1> 2. srcset로 가변요소 적용 </h1>
+	<img srcset = "images/c1.jpg 640w,
+				   images/c2.jpg 1280w,
+				   images/c3.jpg 1920w"
+		 size="(max-width: 640px) 640px,
+		       (max-width: 1280px) 1280px,
+		       1920px"
+		 src="images/c3.jpg" alt="">
+   <!-- 
+   만약 이미지 크기 변화가 없을 경우 : 
+   크롬에서 개발자 도구를 연다 > network > disable cache 선택 
+   
+   <img srcset = "경로 원본크기, 
+                  경로 원본크기, 
+                  경로 원본크기 "
+		 size="(미디어 조건) 화면 최적화 출력크기,
+		       (미디어 조건) 화면 최적화 출력크기,
+		       기본 출력크기"
+		 src="기본이미지 경로" >
+    -->
+	
+	
+	
+	<hr>
+	
+	<h1> 3. picture, source 로 가변요소 적용 </h1>
+	<picture>
+		<source srcset="images/c3.jpg" media="(min-width:1920px)">
+		<source srcset="images/c2.jpg" media="(min-width:1280px)">
+		<source srcset="images/c1.jpg" media="(min-width:640px)">
+		<img src="images/c3.jpg">
+	</picture>
+	
+	
+	
+	
+
+</body>
+</html>

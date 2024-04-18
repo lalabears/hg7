@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>미디어 쿼리 이미지 실습</title>
+	<style>
+	/*
+	 1. div 에 첫번째 이미지를 배경화면으로 띄우기 
+	 2. 최대너비가 2000px일 때 두번째 이미지 배경으로 띄우기
+	 3. 최대너비가 1000px일때 세번째 이미지 배경으로 띄우기 
+	 4. 최대너비가 600px일때 네번째 이미지 배경으로 띄우기 
+	 
+	 @media screen and () {}
+	*/
+	
+	*{margin: 0 auto; padding: 0}
+	div{width: 1000px; height: 1000px;}
+	div{ background: url("images/im1.jpg") no-repeat; }
+	@media screen and (max-width: 2000px) {
+		div{ background: url("images/im2.jpg") no-repeat;  }
+	
+	}
+	@media screen and (max-width: 1000px) {
+		div{ background: url("images/im3.jpg") no-repeat;  }
+	
+	}
+	@media screen and (max-width: 600px) {
+		div{ background: url("images/im4.jpg") no-repeat;  }
+	
+	}
+	
+	
+	</style>
+	
+</head>
+<body>
+	<div></div>
+	
+</body>
+</html>

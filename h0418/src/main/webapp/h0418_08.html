@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>플렉스박스</title>
+	<style>
+	/*  css의 레이아웃모델 
+	    서로다른 크기, 화면, 기기에서 html요소들이 자동으로 
+		정렬되어 웹페이지를 언제나 똑같이 유지할 수 있게 해줌   */
+	#container{	width: 1000px; height: 300px; 
+				margin: 0 auto; 
+				border: 2px solid black;
+				
+				display: flex; 
+				/* 부모요소에 flex설정을 해주게되면 
+				자식요소들은 inline처럼 가로방향으로 배치가 됨
+				width는 자신이 가진 content의 width만큼 차지하게되고
+				height는 부모의 높이만큼 늘어남 
+				*/
+				
+				flex-direction : row;
+				/* row(기본), row-reverse, column, column-reverse */
+				
+				flex-wrap : wrap;
+				/* wrap, wrap-reverse */
+				/* 하위요소의 크기가 상위요소의 크기를 넘으면 자동 줄바꿈 할것인지를 정함 */
+				
+				justify-content: space-between; 
+				/* 자식요소들을 어떻게 정렬을 할지... 
+				 flex-start, flex-end, space-between */
+				 
+			   align-items: stretch;
+			   
+			   /* 수직방향으로 어떻게 정렬할것이나 
+			    center, flex-start, flex-end, stretch
+			    */
+			   
+				
+	}
+	#container div{ width: 200px; border: 
+					2px solid black; background: #ccc;}
+	h2{  font-size: 20px; font-weight: bold;
+		 padding: 20px; }
+
+	#box1{ order:2; }
+	#box2{ order:3; }
+	#box3{ order:1; }
+	
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="box1"><h2>1</h2></div>
+		<div id="box2"><h2>2</h2></div>
+		<div id="box3"><h2>3</h2></div>
+	</div>
+
+</body>
+</html>
