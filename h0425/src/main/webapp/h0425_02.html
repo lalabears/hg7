@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>게시판 만들어보기 </title>
+	<style>
+		*{ padding: 0; margin: 0 auto; }
+		h2{width: 1020px; text-align: center; 
+			margin-bottom : 50px; font-size: 40px; 		
+		}
+		table{width: 1020px; margin: 0 auto; 
+		text-align:center;
+		}
+		table, th, td{ border: 1px solid black; 
+		border-collapse: collapse; }
+		th{height: 60px; background: #efefef; 
+		  font-size: 19px}
+		td{height: 50px; }
+	</style>
+	
+</head>
+<body>
+
+	<h2>자유게시판</h2>
+
+	<table>
+		<colgroup>
+			<col width="10%">
+			<col width="50%">
+			<col width="15%">
+			<col width="10%">
+			<col width="15%">
+		</colgroup>
+		<tr>
+			<th>번호</th>
+			<th>제목</th>
+			<th>작성자</th>
+			<th>조회수</th>
+			<th>날짜</th>
+		</tr>
+		
+		<tbody id="tbody">
+		
+		</tbody>
+		
+	</table>
+ 
+	<script src="js/js0425_02.js"></script>
+
+
+	
+</body>
+</html>
