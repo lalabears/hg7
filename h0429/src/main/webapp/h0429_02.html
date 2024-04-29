@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>DOM</title>
+</head>
+<body>
+<!--  
+     getElementsByTagName(태그이름) : 해당 태그이름 요소를 모두 선택
+     getElementById(아이디) : 해당 아이디 요소를 선택
+     getElementsByName(name속성값) : 해당 name속성값을 가지는 요소를 모두 선택
+     getElementsByClassName(클래스이름) : 해당클래스에 속한 요소를 모두 선택 
+     querySelectorAll(선택자) : 해당 선택자로 선택되는 요소를 모두 선택함   
+-->
+	<h1 class = "c1"> h1 + class c1 </h1>
+	<h1> h1 </h1>
+	<h1 id = "hd1"> h1 + id hd1 </h1>
+	<h1 name = "n1"> n1 + name n1</h1>
+	
+	<p id = "p1"> p + id p1 </p>
+	<p class = "c1"> p + class c1 </p>
+	<p name = "n1"> p  + name n1 </p>
+	
+	<div id="divid">
+		<p> div + p tag </p>
+		<p class ="c1"> div + p + class c1 </p>
+		<a href ="https://www.naver.com" target="_blank">
+		네이버</a>
+	</div>
+	
+	<script type="text/javascript">
+	// 태그 이름으로 요소를 가지고 올 수 있다. 
+	var headers = document.getElementsByTagName('h1');
+	// h1태그를 가진 요소들을 모두 headers라는 변수에 넣어라 . 배열로. 여러개
+	console.log(headers);
+	console.log(headers.length); // 4개 h1태그가 4개 
+	console.log(headers[0]); // <h1 class = "c1"> h1 + class c1 </h1>
+
+	// id로 가져올 수 있다. 
+	var hh1 = document.getElementById('hd1');
+	console.log(hh1); // <h1 id = "hd1"> h1 + id hd1 </h1>
+	
+	// p tag에 아이디 있는 요소 아이디로 가져와서 console 출력해보세요  
+	var pp1  = document.getElementById("p1");
+	console.log(pp1); // <p id = "p1"> p + id p1 </p>
+	
+	// name으로 요소 찾기 
+	var nn1 = document.getElementsByName('n1');
+	console.log(nn1);
+	console.log(nn1.length); // name='n1'인 요소가 2개라서 2 출력 
+	
+	// class 로 요소 찾기 
+	var cls1 = document.getElementsByClassName("c1");
+	console.log(cls1);
+	console.log(cls1.length);
+
+	
+	// queryselector 로 찾기 
+	var q1 = document.querySelectorAll(".c1"); // class는 .클래스명
+	console.log(q1);
+	var q2 =  document.querySelectorAll("#p1");// id 는 #아이디명
+	console.log(q2);
+	var q3 =  document.querySelectorAll("p"); // 태그이름
+	console.log(q3);
+	var q4 =  document.querySelectorAll("[target]");
+	console.log(q4);
+	
+	
+	</script>
+</body>
+</html>
