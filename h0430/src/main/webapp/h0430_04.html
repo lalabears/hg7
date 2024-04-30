@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>select</title>
+</head>
+<body>
+	<!--  get: url에 정보를 담아 보냄    post: 숨김 
+	      submit을 했을때 이동되는 url >  action
+	-->
+	<form action="#" name="frm1" method="get">
+		<label>이름</label>
+		<input type="text" name="name" id="name">
+		<br>
+		<select name="birth" id="birth">
+		    <!-- 이부분을 채워줄 수 있습니다.  -->
+		</select>
+		<label>년</label>
+		<br>
+		
+		<select id="exam">
+		  
+		</select>
+		
+		<br>
+		<input type="submit" value="전송">
+	</form>
+	
+	<script>
+	
+	var htmlselectstr = '<option>사과</option>'
+	htmlselectstr += '<option>딸기</option>'
+	htmlselectstr += '<option>포도</option>'
+	htmlselectstr += '<option>자몽</option>'
+	document.getElementById('exam').innerHTML = htmlselectstr
+	
+	
+/*	
+    str = str + '<option value="1990">1990</option>'
+	str = str + '<option value="1991">1991</option>'
+	... 
+	str = str + '<option value="2024">2024</option>'
+
+*/	
+   
+	var str = '';  // '<option value="1990">1990</option>';
+	for (let i = 1900; i <= 2024; i++){
+		str += '<option value="'+ i +'">'+ i +'</option>'
+	}
+	document.getElementById('birth').innerHTML = str; 
+
+
+	</script>
+
+</body>
+</html>

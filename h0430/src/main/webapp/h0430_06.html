@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>onclick</title>
+	<script>
+	
+	function changeRedColor(){
+		document.getElementById("txt").style.color = "red";
+	}
+	
+	function changeBlueColor(){
+		document.getElementById("txt").style.color = "blue";
+	}
+	
+	var color = ["white", "yellow","tomato","pink","skyblue"];
+	var i = 0 ; 
+	function changeColor(){
+		i++; // i 하나씩 증가 
+		if(i >= color.length){
+			i = 0; 
+		}
+		var theBodyTag = document.getElementById("theBody");
+		theBodyTag.style.backgroundColor = color[i];
+	}
+	</script>
+</head>
+<body id = "theBody" >	
+	<h1>스타일 변경</h1>
+	<p id="txt"> 이문자의 기본색은 검정색입니다 </p>
+	<button onclick="changeRedColor()">빨간색</button>
+	<button onclick="changeBlueColor()">파란색</button>
+	<button onclick="changeColor()">배경색바꾸기</button>
+</body>
+</html>

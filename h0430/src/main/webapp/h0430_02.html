@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>제목</title>
+</head>
+<body>
+
+	<p id="text"> 기존 문장입니다. </p>
+	<a id="link" href="https://www.google.com"> 기존 링크입니다 </a>
+	
+	<script>
+	//alert(document.title);
+	document.title = "새로운 제목입니다";
+	//alert(document.title);
+	
+	var str = document.getElementById("text");
+	console.log(str); // <p id="text"> 기존 문장입니다. </p>
+	console.log(str.innerHTML); // 기존 문장입니다.
+    str.innerHTML = '변경되었습니다.'
+	
+	var link = document.getElementById("link"); 
+	console.log(link.innerHTML);
+	console.log(link.href); 
+	
+	// 기존 링크입니다 -> 네이버 바로가기 
+	// https://www.google.com > https://www.naver.com 
+	link.innerHTML = '네이버 바로가기';
+	link.href = 'https://www.naver.com'
+	
+	console.log(link.href); 
+	
+	str.style.color = 'blue';
+	link.style.background='pink';
+	</script>
+
+</body>
+</html>
