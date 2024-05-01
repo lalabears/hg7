@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>pop-up</title>
+	<script>
+	var w; 
+	function openPop(){//alert(1);
+		w = window.open('pop_up.html','',
+				'width=300px , height=400px, left=0, top=0')
+	// window.open( url, name, spec )
+	// name : _blank 새창(기본값) _parent 부모프레임에  _self 현재페이지대체
+	}
+	function sizeReset(){
+		//alert(2);
+		w.resizeTo(200,200);
+		w.focus();
+	}
+	function sizePlus(){
+		w.resizeBy(20,20);
+		w.focus();
+	}
+	</script>
+</head>
+<body>
+	<button onclick="openPop()">팝업창열기</button><br><br>
+	<button onclick="sizeReset()">사이즈초기화</button>	<br><br>
+	<button onclick="sizePlus()">사이즈 증가</button>
+</body>
+</html>

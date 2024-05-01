@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>javascript vs jQuery</title>
+	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+	/*// javascript
+	function addTitle(){
+		// alert()
+		document.getElementById('tit').innerHTML = "뉴진스 사진입니다";
+		
+	}*/
+	// 위치를 읽고.text('뉴진스');
+	// $(document).ready(function(){	})
+	$(function(){
+		// jquery는 무조건. 이곳에서 작성해야 동작합니다. 	
+		
+		$("#btn1").on("click", function(){
+			$("#tit").text("뉴진스입니다")
+		}); // btn1 버튼 
+		
+	}); // jquery 
+	
+	
+	
+	</script>
+	
+</head>
+<body>
+	
+	<img src= "images/new.jpg" >
+	<h1 id="tit"> <!--  글자 넣기 --> 	</h1>
+	<button onclick="addTitle()" id="btn1">버튼</button>	
+	<!-- 자바스크립트를 사용해서 tit에 뉴진스-->
+	
+	
+	
+</body>
+</html>

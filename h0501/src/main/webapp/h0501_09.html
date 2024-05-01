@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+	// #아이디 .클래스 
+	
+	 //  $(선택자).동작함수();
+	
+	$(function(){
+		// jquery코드를 작성해야 jquery가 실행됨 
+		$("*").css("border","1px solid white");
+		$("#title").css("color","red");
+		// 아이디가 tit인것에 배경색을 원하는 색으로 변경해보세요 
+		$("#tit").css("background","pink");
+		// 클래스가 c1것에 글자색을 파랑색으로 변경해보세요 
+		$(".c1").css("color","blue");
+		
+		$("p").on( "click", function(){
+			// 속성 변경 
+			$("img[id='photo']").attr("src","images/a1.jpg");
+		  //                  <img src="주소" alt="개">
+		}); // p tag - click 
+		
+		$("#id1").on("click", function(){
+			$("a").css({"color":"green", "text-decoration":"none"});
+			
+			$("#g").attr("href","https://www.google.com");
+			$("#g").attr("target","_blank");
+			
+			$("#n").attr({"href":"https://www.naver.com", "target":"_blank"});
+			
+			// $("a").css("text-decoration","none");
+			// 구글에 href 속성을 # -> https://www.google.com
+			
+		});// id1의 함수 
+		
+		
+	/*	
+		해보세요 :
+		web site 글씨를 클릭했을 때, 
+		
+		google, naver, daum 
+		a 태그 글자데코레이션을 none으로 바꾸고, 색도 초록색으로 변경 
+		'text-decoration' 
+		구글에 href 속성을 # -> https://www.google.com 바꿔보세요
+		href="#" id="g"
+	*/	
+	
+
+		
+	}); // jquery
+	</script>	
+	
+	
+</head>
+<body>
+<a href="https://www.naver.com">naver</a>
+	<h1 id="title">제목</h1>
+	<h2 id="tit"> 제이쿼리 </h2>
+	<h3 class="c1"> 자바스크립트 </h3>
+	<img src="images/a2.jpg" alt="cat" id="photo"><br>
+	<p>마우스로 글씨를 클릭해보세요</p>
+	
+	
+	<h1 id="id1" class="c1">web site</h1>
+	<ul>
+		<li class="c1"><a href="#" id="g">google</a></li>
+		<li class="c1"><a href="#" id="n">naver</a></li>
+		<li class="c1"><a href="#" id="d">daum</a></li>
+	</ul>
+</body>
+</html>

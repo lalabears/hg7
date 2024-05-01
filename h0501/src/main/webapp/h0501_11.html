@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>학생성적</title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+	$(function(){
+		
+		// $("div").css("color","red");
+		// # : id , . : class 
+//		$("div").text("<h1>학생성적프로그램</h1>");
+		$("div").html("<h1>학생성적프로그램</h1>");
+		$("#sbtn").on("click",function(){
+			var name = $("#name").val();
+			//	alert(name);
+			// 국어 영어 점수를 받아서
+			// 두 점수의 평균을 alert 창에 띄워주세요 . 
+			var kor = $("#kor").val();
+			var eng = $("#eng").val();
+			var r = Number(kor)+Number(eng);
+			alert(r/2);
+		
+		}); // sbtn클릭 
+		
+		
+		
+		
+	}); // jquery 
+	</script>
+</head>
+<body>  <!-- 제이쿼리를 사용해서 div안에 학생성적프로그램 글자넣기 -->
+	<div> ?????????  </div>
+	<form action = "#" name="frm1" method="get">
+		<label>이름</label>
+		<input type="text" name="name" id="name">
+		<br>
+		<label>국어</label>
+		<input type="text" name="kor" id ="kor">
+		<br>
+		<label>영어</label>
+		<input type="text" name="eng" id="eng">
+	</form>
+	<button onclick="sBtn()" id="sbtn">저장</button>
+</body>
+</html>

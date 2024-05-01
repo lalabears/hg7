@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>setInterVal</title>
+	<style>
+		p{ margin-top: 20px; font-size: 40px; text-align:center;}
+		.display{ font-size: 50px; font-weight: bold; color:blue;}
+	</style>
+</head>
+<body>
+	
+	<p>현재시간 <span id="current" class="display"></span> </p>
+
+	<script>
+	// 1 초마다 반복해서 실행을 시켜줘라 
+	// setInterval(() => document.write(new Date()+"<br>"),1000);
+	setInterval(displayNow,1000);
+  	function displayNow(){
+  		// 시간 계산 함수 
+  		var now = new Date();
+  		var currentTime = now.toLocaleTimeString();
+  		// 지역에 맞는 시간을 문자열로 
+  		document.querySelector("#current").innerHTML = currentTime;
+  		
+  	}
+
+	
+	
+	
+	</script>
+
+</body>
+</html>
