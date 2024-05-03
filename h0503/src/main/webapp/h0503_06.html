@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>다음 api 주소 사용해보기 </title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	
+    <script>
+    
+    $(function(){
+    	$('#zipBtn').click(function(){
+    		new daum.Postcode({
+    	        oncomplete: function(data) {
+    	        	$('#zip').val(data.zonecode); // 우편번호
+					$("#addr1").val(data.addressEnglish); // 주소
+    	        }
+    	    }).open();
+    	})// zip버튼을 누르면
+    	
+    	$('#zipsave').click(function(){
+    		var zip = $('#zip').val();
+    		var ad1 = $("#addr1").val();
+    		var ad2 = $("#addr2").val();
+    		alert(zip+ad1+ad2);
+    		
+    	}); //저장버튼을 누르면. 
+    	
+    	
+    });//jquery
+
+    
+   
+    //  우편번호 저장을 누르면
+	//  우편번호 + 주소 + 상세주소를 alert창으로 띄워보세요 
+    
+    </script>
+	<style>
+        input{width:300px; height:30px; margin-bottom:10px;}
+    </style>
+</head>
+<body>
+
+	<form action="#" method="get" name="frm">
+        <label>주소</label><br>
+        <input type="text" name="zip" id="zip">
+        <button type="button" id="zipBtn">우편번호 검색</button>
+        <br>
+        <input type="text" name="addr1" id="addr1" placeholder="기본주소가 들어갑니다."><br>
+        <input type="text" name="addr2" id="addr2" placeholder="상세주소를 입력하세요."><br>
+    </form>
+        <button type="button" id="zipsave">우편번호저장</button>
+
+</body>
+</html>

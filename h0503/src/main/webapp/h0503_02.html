@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>this</title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+	$(function(){
+		
+		// 버튼1을 눌렀을때, 버튼1이 눌름이라는 값으로 바뀌게 해보세요 
+		/*
+		$('.btn1').click(function(){ 
+			$('.btn1').val("누름");
+		});// 버튼1을 눌렀을때
+		$('.btn2').click(function(){ 
+			$('.btn2').val("누름");
+		});// 버튼2을 눌렀을때
+		$('.btn3').click(function(){ 
+			$('.btn3').val("누름");
+		});// 버튼3을 눌렀을때
+		*/
+		// this 자기자신 . 
+		$('[type="button"]').click(function(){
+			//$('[type="button"]').val("눌럿음");
+			$(this).val("눌럿슈=");
+		});   // this 자기자신 . 
+		// div에 마우스를 올렸을때
+		// mouseenter > 배경색은 파랑, 글씨는 흰색으로 변경
+		// mouseleave > 배경 흰 글씨 검정 
+		
+		$('div').mouseenter(function(){
+			$(this).css({"background":"blue", "color":"white" });
+		}); 
+		$('div').mouseleave(function(){
+			$(this).css({"background":"white", "color":"black" });
+		});
+		
+		/*
+		// blue클래스 추가제거 
+		$('div').mouseenter(function(){
+			$(this).addClass('blue');
+		}); 
+		$('div').mouseleave(function(){
+			$(this).removeClass('blue');
+		}); 
+		*/
+	});// jquery 
+	</script>
+	<style>
+		div{width:100px; height:50px; text-align:center;
+		 border: 1px solid black; }
+		.blue{ color: white; font-weight: 700; background: blue; }
+	</style>
+</head>
+<body>
+	<input class="btn1" type="button" value="버튼1">
+	<input class="btn2" type="button" value="버튼2">
+	<input class="btn3" type="button" value="버튼3">
+	<br><br>
+	<div>서울</div>
+	<div>대전</div>
+	<div>부산</div>
+
+</body>
+</html>

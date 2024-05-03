@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>회원가입동의</title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+	$(function(){
+		
+		$('#memBtn').click(function(){
+			
+			var len = $('input[name="agree"]:checked').length;
+			// alert(len);
+			if (len < 2 ){
+				if( confirm("전체 동의를 선택하시겠습니까") ){
+					// 확인버튼을 눌렀을 경우만 실행 
+					
+					$('input[name="agree"]').each(function(){
+						 
+						// this.checked = true; 
+						$(this).attr("checked", "checked");
+					
+					});
+					
+					
+					
+				}
+				
+				
+			}
+			
+		})// 버튼 클릭
+		
+		//제이쿼리를 사용해서, 동의된 갯수 출력 (alert)
+		// 갯수가 2미만이면 컨펌창으로  전체 동의를 선택하시겠습니까 로 물어본 뒤
+		// 확인 버튼을 누르면 다 체크가 되게 해보세요 > each 
+		// this.checked = true; 
+		
+	/*	$('input[name="agree"]').each(function(){
+			// 둘 중에 하나 
+			this.checked = true;
+			$(this).attr("checked","checked");
+		});
+	*/	
+		
+		
+	})// jquery
+	</script>
+</head>
+<body>
+	<form action="#" method="get" name="frm">
+		<label>개인정보수집 동의1</label>
+		<input type="checkbox" name="agree" id="agree1" value="yes">
+		<br>
+		<label>개인정보수집 동의2</label>
+		<input type="checkbox" name="agree" id="agree2" value="yes">
+	</form>
+	<button id="memBtn">회원가입</button>
+</body>
+</html>

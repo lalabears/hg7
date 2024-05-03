@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>each forEach</title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+	$(function(){
+		// 배열 어레이. 
+		var arr = ['one', 'two', 'three','four','five'];
+		// 오브젝트 { 키 : 값 , 키 : 값 , .... }
+		var obj = { one : 'A', two :'B', three: 'C',
+					four :'D', five:'E'	};
+		console.log(arr[0]);
+		var person = { name : "홍길동", age: 25 };
+		console.log(person['name']);
+		for (let i = 0 ; i <arr.length ; i ++ ){
+			console.log(arr[i]);
+		}
+		/*
+			$.each ( object , function(index, item){    }) ;
+			$(선택자).each(function(index, item){  }) ;	
+		*/
+		console.log( " each를 사용 arr 출력 " );
+		$.each(arr, function (i, val ){
+			console.log( i +  " : " + val );
+		}); // arr-each 
+		console.log( " each를 사용 obj 출력 " );
+		$.each(obj, function(key, val){
+			console.log( key +  " : " + val );
+		});// obj-each
+		
+		console.log( " forEach를 사용 arr 출력 " );
+		arr.forEach(function (val, i, ary ){
+			console.log( i +  " : " + val + " -> " + ary);
+		});// arr- foreach 
+		
+		$('button').click(function(){
+			$('a').each(function(index, value){
+				
+				$(value).attr('target','_blank');
+				$(this).addClass('c'+index); 
+				
+			});
+		});// 버튼을 누르면 
+		
+		
+		
+	});// jquery
+	</script>
+</head>
+<body>
+	<ul>
+		<li><a href="https://www.google.com">구글</a></li>
+		<li><a href="https://www.naver.com">네이버</a></li>
+		<li><a href="https://www.daum.net">다음</a></li>
+	</ul>
+	<button>버튼</button>
+</body>
+</html>

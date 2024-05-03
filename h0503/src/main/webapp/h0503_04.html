@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> each - checkbox </title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+	$(function(){
+
+		$('#chBtn').click(function(){
+			// name이 hobby일때, 체크된 애들의 길이를 콘솔에 출력해보세요 
+			// :checked
+			console.log($('input[name="hobby"]:checked').length);
+			console.log($('input[name="hobby"]:checked'));
+			// 체크된애들의 첫번째(0) 값(value) 콘솔창에 출력해보세요 
+			console.log($('input[name="hobby"]:checked').eq(0).val());
+			
+			console.log("each를 사용해서 체크된 요소들 값 확인하기 : ");
+			$('input[name="hobby"]:checked').each(function(){
+				console.log($(this).val());
+			});// 취미체크박스-each
+			
+			// 라디오박스에서 선택된 값 출력하기 
+			console.log($('input[name="live"]:checked').val())
+			// 한국, 외국 이라는 글자를 출력해보세요 (next, text.. )
+			console.log($('input[name="live"]:checked').next().text())
+			
+		});//전송버튼을 눌렀을때
+	})// jquery
+	</script>
+</head>
+<body>
+	<form action="#" method="get" name="frm">
+		<h2>취미</h2>
+		<input type="checkbox" name="hobby" id="game" value="game" checked="checked">
+		<label for="game">게임</label>
+		<input type="checkbox" name="hobby" id="golf" value="golf">
+		<label for="golf">골프</label>
+		<input type="checkbox" name="hobby" id="swim" value="swim">
+		<label for="swim">수영</label>
+		<input type="checkbox" name="hobby" id="run" value="run">
+		<label for="run">달리기</label>
+		<input type="checkbox" name="hobby" id="book" value="book">
+		<label for="book">독서</label>
+		<h2>거주지역</h2>
+		<input type="radio" name="live" id="kor" value="kor" checked>
+		<label for="kor">한국</label>
+		<input type="radio" name="live" id="foreign" value="foreign">
+		<label for="foreign">외국</label>
+	</form><br><br>
+	<button id="chBtn">전송</button>
+
+</body>
+</html>
