@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>이벤트</title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<style>
+	div{width:300px; height:300px; background: tomato;
+	border: 1px solid black; border-width: 1px; 
+	}
+	</style>
+	<script>
+	$(function(){
+		
+		var count = 1;
+		
+		// btn1을 누르면 제이쿼리호출 alert출력 
+		$(".btn1").on("click", function(){
+			//alert('제이쿼리호출')
+			count++;
+			$("#d01").css(
+			 {"background": "yellow", "border-width":count }	
+			);
+		})// btn1 
+		
+		//btn2 눌렀을때 색은 orange색으로 바꾸고 두께는 점점 줄어들게
+		$(".btn2").on("click", function(){
+			//alert('제이쿼리호출')
+			count--;
+			$("#d01").css(
+			 {"background": "orange", "border-width":count }	
+			);
+		})// btn2
+		
+	});// jquery
+	
+	function btnJ(){
+		alert('자바스크립트 함수를 호출하셨습니다');
+	}
+	</script>
+</head>
+<body>
+	<div id="d01">
+	</div>
+	<button class="btn1">색, 두께 증가</button>
+	<button class="btn2">색, 두께 감소</button>
+	<hr>
+	<button onclick="btnJ()">자바스크립트호출</button>
+</body>
+</html>

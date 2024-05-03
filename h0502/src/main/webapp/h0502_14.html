@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>테이블에 추가하기</title>
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+	$(function(){
+		// jquery code 사용 
+		$('#writeBtn').click(function(){
+			var no = $("#no").val();
+			var title = $("#title").val();
+			var user = $("#user").val();
+			// console.log(no+title+user);
+			var htmlStr = '';
+			htmlStr += '<tr><td>'+no+'</td>';
+			htmlStr += '<td>'+title+'</td>';
+			htmlStr += '<td>'+user+'</td>';
+			htmlStr += '<td>2024-05-02</td></tr>';
+			$("#tbody").append(htmlStr);
+		});
+		$('#writeBtn').on("click", function(){
+			
+			
+		});// 글쓰기 버튼을 눌렀을때 
+	}); // jquery
+	</script>
+	<style>
+	*{padding:0; margin:0;}
+	table{width:1000px; margin: 30px auto; text-align:center;}
+	table, th, td{border: 1px solid black; border-collapse:collapse;}
+	th{height:40px; background:#efefef;}
+	td{width:200px; height: 35px;}
+	</style>
+</head>
+<body>
+	<h2>글쓰기</h2>
+	<form action="" name="frm" method="get">
+		<label>번호</label>
+		<input type="text" id="no" name="no"><br>
+		<label>제목</label>
+		<input type="text" id="title" name="title"><br>
+		<label>작성자</label>
+		<input type="text" id="user" name="user"><br>
+		<button id="writeBtn">글등록</button>
+	</form>
+	<hr><br>
+	<table>
+		<thead>
+			<tr>
+				<th>번호</th> 
+				<th>제목</th> 
+				<th>작성자</th> 
+				<th>날짜</th> 
+			</tr>
+		</thead>
+		<tbody id="tbody">
+			<tr>
+				<td id="t01">1</td>
+				<td>첫번째 게시글입니다</td>
+				<td>홍길동</td>
+				<td>2024-05-02</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+
+</body>
+</html>

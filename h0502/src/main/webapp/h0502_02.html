@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery - attr </title>
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<style>
+	.red{color:red;}
+	.blue{color:blue; font-weight:700; font-size: 30px;}
+	</style>
+	<script>
+		$(function(){
+			// jquery code
+			$("p").on("click", function(){
+			//	alert('ptag clicked');
+				$("p").attr("class","blue");
+				$("#a01").attr("href","h0502_01.html");
+				$("#a01").attr("target","_blank");
+				//$("#a01").attr({"href":"h0502_01.html","target":"_blank"});
+			}); // p-click
+			
+			// 버튼을 클릭을 했을때, 이미지 아무거나 나타나게 해주세요 
+			
+			$("#btn1").on("click",function(){
+				//alert()
+				//  <img src="" alt="이미지설명입니다"><br>
+				$("img").attr("src","images/d1.jpg");
+				
+			}); // #btn1버튼 
+			
+		
+		});// jquery-end
+	</script>
+</head>
+<body>
+	<p class="red"> 빨간색 글자입니다</p>
+	<a href="#" id="a01">atag입니다</a><br>
+	<img src="" alt="이미지설명입니다"><br>
+	<button id="btn1">버튼</button>
+	
+</body>
+</html>

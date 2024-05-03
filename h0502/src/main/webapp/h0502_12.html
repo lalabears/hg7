@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>실습</title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+	// jquery를 사용해서 
+	// div에 마우스가 올라가면 글자색은 흰색 
+	// 배경은 파랑색으로 바꾸고 
+	// 마우스가 떠나면 원상복귀시켜보세요 
+	$(function(){
+		$("div").mouseenter(function(){
+			var str = {"background":"blue","color":"white"};
+			$("div").css(str)
+		});
+		
+		$("div").on('mouseleave',function(){
+			var str = {"background":"white","color":"black"};
+			$("div").css(str)
+		});
+		
+		// keyup, keypress, keydown 
+		// keyup = 손을떼는 시점
+		// keydown = 손을 누르는시점
+		// keypress = 누르는 시점 
+		$("#inTest").on("keyup", function(e){
+			console.log("키보드에서 손뗌");
+			// console.log(e.keyCode);
+		})// inputbox keyup
+		$("#inTest").on("keydown", function(e){
+			console.log("keydown");
+		})
+		$("#inTest").on("keypress", function(e){
+			console.log("keypress");
+		})
+		
+		
+	}); // jquery
+	</script>
+	<style>
+		div{width:100px; height:80px;
+		 border: 1px solid black; }
+	</style>
+</head>
+
+<body>
+	<div>부산</div>
+	<div>대전</div>
+	<div>대구</div>
+	
+	<input type="text" name="inTest" id="inTest" >
+	
+</body>
+</html>

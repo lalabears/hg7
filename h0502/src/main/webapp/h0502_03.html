@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery - input </title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+	$(function(){
+		// 태그 속 텍스트 가져오기
+		var label1 = $("#id01").text();
+		console.log(label1);
+		// 아이디에 해당하는 태그 속 텍스트 변경
+		$("#id01").text("name");
+		// input 속 값 넣기 
+		$('#name').val("홍길동");
+		// input 속 값 가져오기 
+		var name1 = $("#name").val();
+		
+	    //버튼을 눌럿을때. 
+	    //이름이랑 점수두개를 가져와서
+	    //<div id="txt"></div>위치에 출력하기 
+	    
+	    $("#sbtn").on("click",function(){
+	    	//alert()
+	    	var n,k,e; 
+	    	n = $("#name").val();
+	    	k = $("#kor").val();
+	    	e = $("#eng").val();
+	    //	console.log(n+k+e);
+	    	var str =`<h1> ${n}님의 국어점수는 ${k} 영어점수는 ${e} </h1>`;
+//	    	$("#txt").text(str);
+	    	$("#txt").html(str);
+	    })
+		
+		
+	});// jquery-end
+	</script>
+</head>
+<body>
+	<form action="#" name="frm1" method="get">
+		<label id="id01">이름</label>
+		<input type="text" name="name" id="name">
+		<br>
+		<label id="id02">국어</label>
+		<input type="text" name="kor" id="kor">
+		<br>
+		<label id="id03">영어</label>
+		<input type="text" name="eng" id="eng">
+	</form>
+	<button id="sbtn">저장</button>
+	<div id="txt"></div>
+</body>
+</html>

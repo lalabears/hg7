@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> eq 실습 </title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+	// jquery를 사용해서 
+	// 버튼을 눌럿을때 '내용' 부분에 사진 아무거나 넣어주세요 
+	// eq 사용 
+	// 1. 버튼을 눌럿을때 alert창 . 
+	// p태그의 2번째(1)위치에 .html 적용
+	// <img src="">
+	$(function(){
+		
+		$("#btn").click(function(){
+			//alert()
+			
+			$('#btn').parent().next().html("<img src='images/d3.jpg'>")
+			
+			
+			//$('p').eq(1).html("<img src='images/d2.jpg'>");
+			
+		});//btn버튼
+		
+		
+		
+		
+	});// jquery
+	</script>
+</head>
+<body>
+	<p><button id="btn">버튼</button>	</p>
+	<p>내용</p>
+	
+	
+</body>
+</html>

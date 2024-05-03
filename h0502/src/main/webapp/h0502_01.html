@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery - css </title>
+	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+	$(function(){
+		// 여기에 jquery코드를 작성해야 동작합니다. 
+		// $(선택자).동작함수(); 
+		// 태그이름으로 스타일 변경 
+		$("h1").css("color","blue");		
+		$("p").css("text-decoration","overline");
+		
+		// 아이디 이름으로 스타일 변경 
+		// #아이디이름 
+		$("#id01").css("background","pink");
+		$("#p1").css("font-size","40px");
+		
+		// 클래스 이름으로 스타일 변경 
+		// .클래스이름
+		$(".c1").css("font-style","italic"); 
+		$(".c1").css({"font-weight":"bold" , "color":"purple"});
+		
+		// 속성을 사용하는 방법 
+		$("p[name='n1']").css("background","tomato");
+		
+		// a 태그를 가진 글자 색 오렌지색, 글자 크기: 30px 밑줄 삭제
+		$("a").css("color","orange");
+		$("a").css("font-size","30px");
+		$("a").css("text-decoration","none");
+		//$("a").css({"color":"orange" ,"font-size":"30px" ,"text-decoration":"none" });
+
+		// 속성 target이 _self인 요소의 배경색을 초록색으로 
+		$("[target='_self']").css("background","green");
+	});
+	
+	</script>
+</head>
+<body>
+	<h1 class="c1">h1+class c1 </h1>
+	<h1> h1 </h1>
+	<h1 id="id01"> h1 + id01 </h1>
+	<h1 name="n1"> h1 + name n1 </h1>
+	<p id="p1"> p + id p1</p>
+	<p class="c1"> p+ class c1  </p>
+	<p name="n1"> p + name n1</p>
+	<div id="divid">
+		<p> div + ptag </p>
+		<p class="c1"> div + p + class c1 </p>
+		<a href="https://www.naver.com" target="_blank">네이버</a>
+		<a href="https://www.google.com" target="_self">구글</a>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>이미지변경</title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+	// 제이쿼리를 사용해서 
+	// 버튼을 누를때 이미지가 변경이 되게 만들어보세요 
+	//     .attr()을 사용. 
+	// src = "images/d1.jpg" 
+	// src = "images/d"+ 1 +".jpg"
+//    1. 버튼을 누르면 alert창이 뜨게 한다. 
+//    2. 이미지 속성을 변경해본다.
+//    3. count변수를 사용해서 (count++) d1부터 d5로 바뀌게 해본다
+	
+	$(function(){
+		let count = 1; 			
+		$("#btn1").click(function(){
+			// alert()
+			count++;
+			if(count == 6){
+				count =1; 
+			}
+			$("#i01").attr("src", "images/d"+ count +".jpg");
+		}); // btn1 
+		
+		
+		
+		
+	}); // jquery 
+	
+	</script>
+	<style>
+	div{width:300px; height:300px; overflow:hidden;}
+	img{width: 350px;}
+	</style>
+
+</head>
+<body>
+	<div>
+		<img id="i01" src="images/d1.jpg">
+	</div>
+	<button id="btn1">이미지변경</button>
+
+</body>
+</html>

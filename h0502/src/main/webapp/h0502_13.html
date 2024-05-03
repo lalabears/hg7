@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>비밀번호확인</title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	
+	<script>
+/*	jquery를사용해서 
+	key를 누를때마다. 
+	비밀번호와 비밀번호확인이 일치하면 
+	pwCheck 위치에 
+	일치하지 않을경우 : 빨간글씨로 일치하지 않습니다.(on 클래스)
+	일치하는 순간 : 파랑글씨로 일치합니다 (off 클래스 )
+	를 출력해보세요 */
+	$(function(){
+		$(".saveBtn").on("click", function(){
+			
+			var pw = $('#pw').val();
+			var pw2 = $('#pw2').val();
+			
+			if(pw==pw2){
+				$('#pwCheck').text("일치합니다");
+				$('#pwCheck').attr("class","off");
+			}else{
+				$('#pwCheck').html("일치하지 않습니다");
+				$('#pwCheck').attr("class","on");
+			}
+				
+		})// svebtn
+		
+		$("#pw2").on("keyup", function(){
+			var pw = $('#pw').val();
+			var pw2 = $('#pw2').val();
+			
+			if(pw==pw2){
+				$('#pwCheck').text("일치합니다");
+				$('#pwCheck').attr("class","off");
+				
+			}else{
+				$('#pwCheck').html("일치하지 않습니다");
+				$('#pwCheck').attr("class","on");
+			}
+		})
+	});// jquery
+	
+	</script>
+	<style>
+	.on{color:red; font-weight:600;}
+	.off{color:blue; font-weight:600;}
+	</style>
+</head>
+<body>
+	<form action="#" method="get" name="frm">
+		<label>아이디</label>
+		<input type="text" id="name" name="name">
+		<br>
+		<label>비밀번호</label>
+		<input type="text" id="pw" name="pw" >
+		<br>
+		<label>비밀번호 확인</label>
+		<input type="text" id="pw2" name="pw2">
+		<span id="pwCheck" > </span>
+	</form>
+	<button class="saveBtn">저장</button>
+	
+</body>
+</html>

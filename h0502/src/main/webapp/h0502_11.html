@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> mouse </title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+	$(function(){
+	/*	$('button').on('click',function(){
+			$('#text').append("마우스가 버튼을 클릭했습니다<br>");
+		});// 클릭 했을때  
+		
+		$('button').on('mouseenter',function(){
+			$('#text').append("마우스가 진입했습니다<br>");
+		});// 마우스 enter 했을때  
+		
+		$('button').on('mouseleave',function(){
+			$('#text').append("마우스가 떠났습니다<br>");
+		});// 마우스 leave했을때  */
+		
+		
+		$('button').on({
+			mouseenter: function(){
+				$('#text').append("마우스가 진입했습니다<br>");
+			},
+			click: function(){
+				$('#text').append("마우스가 버튼을 클릭했습니다<br>");
+			},
+			mouseleave: function(){
+				$('#text').append("마우스가 떠났습니다<br>");
+			}
+		}); // button- on 
+		
+		// mouseover, focus, click 
+		/* $('#pw').on("mouseover",function(){
+			$('#pw').css("background","aqua");
+			
+		});// pw
+		
+		$('#pw').on("focus",function(){ // tab 키로 접근했을때
+			$('#pw').css("background","yellow");
+			
+		});// pw
+		
+		$('#pw').on("click",function(){
+			$('#pw').css("background","pink");
+			
+		});// pw*/
+		
+		$('#pw').on({
+			"mouseover, focus, click" : function(){
+				$('#pw').css("background","aqua");
+			}
+		}); //pw
+		
+		$('#pw').on('mouseleave',function(){
+			$('#pw').css("background","white");
+		})
+		
+		
+	})// jquery
+	</script>
+</head>
+<body>
+	<button> 마우스를 버튼위로 가져가거나 클릭해보세요 
+	</button>
+	<p id="text"></p>
+	
+	<label>비밀번호 : </label>
+	<input type="text" name="pw" id="pw">
+	
+	
+	
+	
+	
+	
+</body>
+</html>

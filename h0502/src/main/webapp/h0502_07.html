@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> item, eq, next, checked </title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+	$(function(){
+			
+		var items = $('li');
+		console.log(items); 
+		$("#len").text("li 요소는 총 "+items.length+" 개");
+		
+		$('#btnA').click(function(){
+			// alert();
+			$('li:has(span)').text("span태그를 포함하고있어요");
+			$('#list').find('li').eq(0).html("첫번째아이템입니다");
+			items.eq(2).text("저는 세번째 아이템입니다");
+			
+			// 수박을 찾아서 글자색을 파란색으로 바꿔보세요
+			// items변수 사용
+			items.eq(4).css("color","blue");
+		}) // btnA
+		
+		$("#btn1").click(function(){
+			// alert()
+			// 체크되어 있는 요소를 가지고 오는 방법 
+			var a = $(':checked');
+			//console.log(a)
+			$(':checked').next().text("체크된요소입니다.");
+			
+		})// btn1
+	});//jquery
+	</script>
+</head>
+<body>
+	<h1>요소선택하기</h1>
+	<ul id="list">
+		<li>1.사과</li>
+		<li><span>2.딸기</span></li>
+		<li>3.귤</li>
+		<li>4.망고</li>
+		<li>5.수박</li>
+	</ul>
+	<button id="btnA">버튼</button>
+	<p id="len"></p>
+	
+	
+	
+	<form action="#" name="frm" method="get">
+		<input type="checkbox" name="lect" value="html">
+		<span>HTML</span>
+		<input type="checkbox" name="lect" value="css" checked>
+		<span>CSS</span>
+		<input type="checkbox" name="lect" value="js">
+		<span>JAVASCRIPT</span>
+		<input type="checkbox" name="lect" value="jq" checked>
+		<span>jQuery</span>
+	</form>
+	<button id="btn1">버튼</button>
+
+</body>
+</html>
