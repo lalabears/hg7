@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>chartjs</title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script>
+	$(function(){
+		$('#chartBtn').click(function(){
+			
+			// 차트그리기 예제 
+			  const ctx = document.getElementById('myChart');
+			  new Chart(ctx, {
+			    type: 'bar',
+			    data: {
+			      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+			      datasets: [{
+			        label: '# of Votes',
+			        data: [12, 19, 3, 5, 2, 3],
+			        borderWidth: 1
+			      }]
+			    },
+			    options: {
+			      scales: {
+			        y: {
+			          beginAtZero: true
+			        }
+			      }
+			    }
+			  });
+		});
+		
+	});// jquery
+	</script>
+	<style>
+	div{width:900px; height: 450px; border:1px solid black;}
+	</style>
+	
+</head>
+<body>
+	<button id="chartBtn">차트가져오기</button>
+	<div>
+	  <canvas id="myChart"></canvas>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>고캠핑-공공데이터 해보기</title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<style>
+		div{width:1100px; margin: 0 auto; }
+		#ajaxBtn{width:200px; height: 50px; margin: 50px 0 30px 0;
+				cursor:pointer;}
+		table, th, td{border:1px solid black; border-collapse:collapse;
+			width: 1100px; margin-top:50px; margin:0 auto; 
+			text-align:center;}
+		th,td{height:30px;}
+		th{background:#efefef;}
+		img{width:50px;}
+	</style>
+	
+	<script>
+	$(function(){
+		$('#ajaxBtn').click(function(){
+			
+			$.ajax({
+				url:'https://apis.data.go.kr/B551011/GoCamping/basedList?serviceKey=5yOr8%2FoR%2FU6nAz5ysFlKnUQ4wayzOogsGSLvrEmu3HET2C43zlryMCB0eAutsCw9wa0xeGjc6BAdQC1YO3LT1A%3D%3D&numOfRows=50&pageNo=1&MobileOS=ETC&MobileApp=AppTest',
+				dataType:'xml',
+				success: function(data){
+					console.log(data)
+					console.log($(data).find('items'))
+					console.log($(data).find('items').find('item'))
+					console.log($(data).find('items').find('item').length)
+					var dataxml = $(data).find('items').find('item');
+//					5. firstImageUrl -> 에는 img 태그로 이미지 띄우기 
+//					   <img src="주소">
+//					6. homepage->에는 a tag로 링크 누르면 홈페이지 이동할 수 있게 하기 
+//					   <a href="https://www.google.com" target="_blank">홈페이지</a>
+
+					let str ='';
+					for(let i = 0 ; i <dataxml.length; i ++){
+						str += '<tr><td>'+dataxml.eq(i).find('facltNm').text() +'</td>';
+						str += '<td>' + dataxml.eq(i).find('doNm').text() + '</td>';
+						str += '<td>' + dataxml.eq(i).find('lctCl').text() + '</td>';
+						str += '<td>' + dataxml.eq(i).find('induty').text() + '</td>';
+						str += '<td>' + dataxml.eq(i).find('tel').text() + '</td>';
+						str += '<td><img src="' + dataxml.eq(i).find('firstImageUrl').text() + '"></td>';
+						str += '<td><a href="' + dataxml.eq(i).find('homepage').text() + '" target="_blank">홈페이지</a></td>';
+						str += '</tr>';
+					}
+					$('#tbody').html(str);
+					
+				},
+				error:function(){
+					alert('error!')
+				}
+			});//ajax
+		});// ajax btn
+		
+/*		
+		1. 버튼 누르면 alert 창 띄우기 
+		2. ajax연결해서 성공 실패 alert 창 띄우기
+		3. ajax성공시 console.log(data)로 정보보기 
+		4. 테이블 그리기
+		5. firstImageUrl -> 에는 img 태그로 이미지 띄우기 
+		   <img src="주소">
+		6. homepage->에는 a tag로 링크 누르면 홈페이지 이동할 수 있게 하기 
+		   <a href="https://www.google.com" target="_blank">홈페이지</a>
+		
+*/		
+		
+	});
+	
+	
+	
+	
+	
+	
+	
+	
+	</script>
+</head>
+<body>
+	<div>
+		<button id="ajaxBtn">데이터가져오기</button>
+		
+	</div>
+	<table>
+		<tr>
+			<th>facltNm</th>
+			<th>doNm</th>
+			<th>lctCl</th>
+			<th>induty</th>
+			<th>tel</th>
+			<th>firstImageUrl</th>
+			<th>homepage</th>
+		</tr>
+		<tbody id="tbody">
+		</tbody>
+	</table>
+</body>
+</html>

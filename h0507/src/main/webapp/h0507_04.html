@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>공공데이터포털 - xml </title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<style>
+		div{width:1100px; margin: 0 auto; }
+		#ajaxBtn{width:200px; height: 50px; margin: 50px 0 30px 0;
+				cursor:pointer;}
+		table, th, td{border:1px solid black; border-collapse:collapse;
+			width: 1100px; margin-top:50px; margin:0 auto; 
+			text-align:center;}
+		th,td{height:30px;}
+		th{background:#efefef;}
+		img{width:50px;}
+	</style>
+	<script>
+	$(function(){
+		// xml로 공공데이터 가져오기 
+		$('#ajaxBtn').click(function(){
+			
+			$.ajax({
+				url: 'https://apis.data.go.kr/B551011/PhotoGalleryService1/galleryList1?serviceKey=5yOr8%2FoR%2FU6nAz5ysFlKnUQ4wayzOogsGSLvrEmu3HET2C43zlryMCB0eAutsCw9wa0xeGjc6BAdQC1YO3LT1A%3D%3D&numOfRows=20&pageNo=5&MobileOS=ETC&MobileApp=AppTest&arrange=A&_type=xml',
+				dataType:'xml',
+				success: function(data){
+					console.log(data);
+					var dataxml = $(data).find('items');
+					console.log(dataxml)
+					var len = dataxml.find("item").length;
+					
+					// 데이터가 존재할 경우만 테이블을 그려라 
+					if( len > 0 ){
+						let str ='';
+						for(let i = 0 ; i < len ; i++){
+							let d = dataxml.find("item").eq(i);
+							str += '<tr><td>'+d.find('galContentId').text() +'</td>';
+							str += '<td>' + d.find('galCreatedtime').text() + '</td>';
+							str += '<td>' + d.find('galPhotographer').text() + '</td>';
+							str += '<td>' + d.find('galTitle').text() + '</td>';
+							str += '<td>' + d.find('galWebImageUrl').text() + '</td>';
+							str += '</tr>';
+							
+						} //for
+						$('#tbody').html(str);
+					}// if
+					
+				
+					
+				},
+				error:function(){
+					alert('실패');
+				}
+				
+			});// ajax - end 
+			
+		})// ajaxBtn
+		
+	});// jquery
+	</script>	
+</head>
+<body>
+	<div>
+		<button id="ajaxBtn">데이터가져오기</button>
+	</div>
+	<table>
+		<tr>
+			<th>Id</th>
+			<th>시간</th>
+			<th>사진작가</th>
+			<th>제목</th>
+			<th>사진주소</th>
+		</tr>
+		<tbody id="tbody">
+		</tbody>
+	</table>
+
+</body>
+</html>

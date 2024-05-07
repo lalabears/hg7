@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>복습 - 학생성적</title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<style>
+	*{padding:0; margin:0}
+	h2{width: 800px; text-align: center; margin: 0 auto;}
+	form{width:800px; margin: 0 auto;}
+	table{width: 800px; margin: 30px auto; text-align:center;}
+	table, th, td{border: 1px solid black; border-collapse: collapse;}
+	th{height: 40px; background: #efefef;}
+	td{height: 30px;}
+	</style>
+	<script>
+	var ismodi = false;  //  전역변수로 선언 수정버튼을 누르면 참, 아님 거짓 
+	
+	$(function(){
+		// 데이터가져오기버튼을 눌렀을때 실행되는 함수 
+		$('#jBtn').click(function(){
+			// ajax 사용하기 
+			$.ajax({
+				url: "js/stu.json", // 전송 파일
+				type: "get", // 전송 방식
+				data: {id:'admin', pw:'1111'}, // 전송할 데이터
+				dataType: "json", // 요청한 데이터방식 
+				success: function(data){  // 성공일때 
+					//alert('성공')
+					console.log(data);
+					console.log(data[0]);//{id: 1, name: 'Augustine', kor: 73, eng: 70, math: 79, …}
+					var str = '';
+					for (let i = 0 ; i<data.length; i ++){
+						str += '<tr id="'+data[i].id +'">';
+						str += '<td>'+data[i].id+'</td>';
+						str += '<td>'+data[i].name+'</td>';
+						str += '<td>'+data[i].kor+'</td>';
+						str += '<td>'+data[i].eng+'</td>';
+						str += '<td>'+data[i].math+'</td>';
+						str += '<td>'+data[i].total+'</td>';
+						str += '<td>'+data[i].avg.toFixed(2)+'</td>';
+						str +='<td><button onclick="modiBtn('+data[i].id +')">수정</button> &nbsp;'
+						str +='<button onclick="delBtn('+data[i].id +')">삭제</button> </td></tr>';
+					}
+					$('#tbody').html(str);
+				},
+				error: function(){
+					alert('실패')
+				}
+			});// ajax - stu.json파일 불러오기
+		});	// jBtn (데이터가져오기버튼을 눌렀을때 실행되는 함수 끝 )
+		
+		var count = 100;
+		
+		// 성적등록 버튼을 눌렀을때 실행되는 함수 
+		$('#wBtn').click(function(){
+			
+			// 수정이 아닐때 즉, 새로운 등록일때만 실행이되는 조건문
+			if(!ismodi){
+				// 등록 버튼을 누를때 마다 학생 번호 하나 증가 
+				count++;
+				// 사용할 변수들 
+				var stuid = count;
+				var name = $('#name').val();
+				var kor = $('#kor').val();
+				var eng = $('#eng').val();
+				var math = $('#math').val();
+				var total = Number(kor)+Number(eng)+Number(math);
+				var avg= (total/3).toFixed(2);
+				// tr(테이블의 한 줄을) 넣기 위한 html 스트링 
+				let str='';
+				str += '<tr id="'+ stuid  +'">';
+				str += '<td>'+ stuid +'</td>';
+				str += '<td>'+name+'</td>';
+				str += '<td>'+kor+'</td>';
+				str += '<td>'+eng+'</td>';
+				str += '<td>'+math+'</td>';
+				str += '<td>'+total+'</td>';
+				str += '<td>'+avg+'</td>';
+				str +='<td><button onclick="modiBtn('+ stuid +')">수정</button> &nbsp;'
+				str +='<button onclick="delBtn('+ stuid +')">삭제</button> </td></tr>';
+				// prepend로 넣어주기 
+				$('#tbody').prepend(str);
+			}else{ // 수정버튼을 눌렀을때 실행이 되게 함. (ismodi 가 참일때) 
+				var stuNo = $('#stuNo').val();
+				
+				var name = $('#name').val();
+				var kor = $('#kor').val();
+				var eng = $('#eng').val();
+				var math = $('#math').val();
+				var total = Number(kor)+Number(eng)+Number(math);
+				var avg= (total/3).toFixed(2);
+				
+				// td들로 이루어진 html 스트링 
+				let str='';
+				str += '<td>'+ stuNo +'</td>';
+				str += '<td>'+name+'</td>';
+				str += '<td>'+kor+'</td>';
+				str += '<td>'+eng+'</td>';
+				str += '<td>'+math+'</td>';
+				str += '<td>'+total+'</td>';
+				str += '<td>'+avg+'</td>';
+				str +='<td><button onclick="modiBtn('+ stuNo +')">수정</button> &nbsp;'
+				str +='<button onclick="delBtn('+ stuNo +')">삭제</button> </td>';
+				// tr아이디로 찾은 위치에 
+				$('#'+stuNo).html(str)
+			}
+			ismodi = false; // 무조건 수정이 아닌것으로 설정. 
+		})// wBtn - 성적등록 버튼을 눌렀을때 실행되는 함수 end 
+	});//jquery
+	
+	// 수정버튼을 눌럿을때 실행되는 함수 
+	function modiBtn(stuNo){ 
+		ismodi = true ; // 수정버튼을 눌럿을때 true . 
+		alert(stuNo+ "번 학생의 수정버튼을 누르셧습니다."); 
+		// 번호, 이름, 국, 영, 수 점수 가져오기 
+		let tds = $("#"+stuNo).children();// 아이디로 가져온 tr . 자식들()
+		$('#stuNo').val(tds.eq(0).text());// 아이디
+		$('#name').val(tds.eq(1).text()); // 이름
+		$('#kor').val(tds.eq(2).text()); // 국어
+		$('#eng').val(tds.eq(3).text()); // 영어
+		$('#math').val(tds.eq(4).text()); // 수학
+	}//  modiBtn - end
+	// 삭제버튼을 눌렀을때 실행되는 함수 
+	function delBtn(stuNo){
+		// alert(stuNo)
+		if (confirm( stuNo+"번 학생의 정보를 정말로 삭제하시겠습니까 ? ")){
+			$('#'+stuNo).remove(); // 아이디를 찾아서 삭제 함수 
+		}
+	}	//  delBtn
+	</script>
+</head>
+<body>
+	<h2>학생성적등록</h2>
+	<form action="" name="frm" method="get">
+		<input type="hidden" id="stuNo" name="stuNo">
+		<label>이름</label> 
+		<input type="text" id="name" name="name"><br>
+		<label>국어</label> 
+		<input type="text" id="kor" name="kor"><br>
+		<label>영어</label> 
+		<input type="text" id="eng" name="eng"><br>
+		<label>수학</label> 
+		<input type="text" id="math" name="math"><br>
+	</form>
+	<button id="wBtn">성적등록</button>
+	<br><hr>
+	<button id="jBtn">데이터 가져오기</button>
+	<h2>학생성적관리시스템</h2>
+	<table>
+		<thead>
+			<tr><th>번호</th><th>이름</th><th>국어</th><th>영어</th>
+				<th>수학</th><th>총점</th><th>평균</th><th>삭제여부</th></tr>
+		</thead>
+		<tbody id="tbody">
+		</tbody>
+	</table>
+</body>
+</html>

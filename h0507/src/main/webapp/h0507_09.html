@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>chartjs</title>
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script>
+	$(function(){
+		$('#chartBtn').click(function(){
+			var xData = [];
+			var yData = [];
+			var zData = [];
+			$.ajax({
+				url : 'js/income.json',
+				dataType:'json',
+				success: function(data){
+					console.log(data);
+					$.each(data, function(i, val){
+						//console.log(val)
+						xData.push(val.year);
+						yData.push(val.sales);
+						zData.push(val.profit);
+						
+					})
+//					console.log(xData);
+//					console.log(yData);
+					console.log(zData);
+					// 차트그리기 
+					const ctx = document.getElementById('myChart');
+					new Chart(ctx, {
+					    data: {
+					        datasets: [{
+					            type: 'bar',
+					            label: 'Bar Dataset',
+					            data: yData
+					        }, {
+					            type: 'line',
+					            label: 'Line Dataset',
+					            data: zData,
+					        }],
+					        labels: xData
+					    },
+					    options: {
+						      scales: {
+						        y: {
+						          beginAtZero: true
+						        }
+						      }
+						    }
+					});
+				
+				},
+				error: function(){
+					alert('에러잇음');
+				}
+			})// ajax 
+		}); // chartBtn - end
+		
+	});// jquery
+	</script>
+	<style>
+	div{width:900px; height: 450px; border:1px solid black;}
+	</style>
+	
+</head>
+<body>
+	<button id="chartBtn">차트가져오기</button>
+	<div>
+	  <canvas id="myChart"></canvas>
+	</div>
+
+</body>
+</html>

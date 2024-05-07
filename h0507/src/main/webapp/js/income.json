@@ -1,0 +1,10 @@
+[{"year":"2015", "sales" : 200.65, "profit": 26.41},
+ {"year":"2016", "sales" : 201.87, "profit": 29.24},
+ {"year":"2017", "sales" : 239.58, "profit": 53.65},
+ {"year":"2018", "sales" : 243.77, "profit": 58.89},
+ {"year":"2019", "sales" : 230.40, "profit": 27.77},
+ {"year":"2020", "sales" : 236.81, "profit": 35.99},
+ {"year":"2021", "sales" : 279.60, "profit": 51.63},
+ {"year":"2022", "sales" : 302.23, "profit": 43.38},
+ {"year":"2023", "sales" : 258.94, "profit": 6.57}
+]
