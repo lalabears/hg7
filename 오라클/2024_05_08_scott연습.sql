@@ -211,25 +211,32 @@ delete from member where id='ccc';
 -- 테이블 삭제하기 
 --  drop table students;
 
-
-
-
-
-
-CREATE TABLE STUDENTS
+create table stu
 (
-    ID VARCHAR2(20),
-    NAME VARCHAR2(20),
-    KOR NUMBER(3),
-    ENG NUMBER(3),
-    MATH NUMBER(3),
-    TOTAL NUMBER(3),
-    AVG NUMBER(4,1), -- 총 4자리 수 인데 소숫점이1자리 인숫자 XXX.X 
-    RANK NUMBER(4)
+    id varchar2(20) primary key,
+    name varchar2(20),
+    kor number(3),
+    eng number(3),
+    math number(3)
 );
+ -- 1 김서아 100, 90, 80  2 박이서 95, 80, 85    3 송아윤 80, 90, 95
+ -- 4 채이준 95, 80,100   5 안서준 90, 100, 80   6 곽은우 85,95,80
 
+insert into stu values ('1','김서아',100, 90, 80);
+insert into stu values ('2','박이서',95, 80, 85);
+insert into stu values ('3','송아윤',80, 90, 95);
+insert into stu values ('4','채이준',95, 80,100);
+insert into stu values ('5','안서준',90, 100, 80);
+insert into stu values ('6','곽은우',85,95,80);
+select * from stu;
+commit;
 
+-- 이름, 국어점수 만 가져와서 출력해보기
+select name, kor from stu;
+-- 이름, 영어점수로 출력하는데 국어점수의 순으로 (높은->낮은) 정렬하기
+select name, eng, kor from stu order by kor desc;
 
-
-
+select name as 이름, kor+eng+math as 총점, (kor+eng+math)/3 as 평균 
+from stu 
+order by 총점 desc;
 
