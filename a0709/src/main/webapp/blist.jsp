@@ -32,7 +32,7 @@
 					<col width="12%">
 				</colgroup>
 				<tr>
-					<th>번호</th>
+					<th>번호</th>.
 					<th>제목</th>
 					<th>작성자</th>
 					<th>작성일</th>
@@ -43,7 +43,7 @@
 			 %>	
 				<tr> 
 					<td><%= b.getBno() %></td>				
-					<td><%= b.getBtitle() %></td>				
+					<td><a href="bview.jsp?bno=<%= b.getBno() %>"><%= b.getBtitle() %></a></td>				
 					<td><%= b.getId() %></td>				
 					<td><%= b.getBdate() %></td>				
 					<td><%= b.getBhit() %></td>				
