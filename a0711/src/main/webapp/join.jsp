@@ -28,7 +28,7 @@
 	<body>
 		<div>
 			<h1>회원가입</h1>
-			<form action="" name="m_frm" method="post">
+			<form action="dojoin.do" name="m_frm" method="post">
 			<table>
 				<tr>
 					<th>아이디</th>

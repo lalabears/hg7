@@ -32,7 +32,7 @@
 
 		<div>
 			<h1>글수정</h1>
-			<form action="" name="b_frm" 
+			<form action="edit.do" name="b_frm" 
 				method="post" enctype="multipart/form-data">
 			<table>
 				<colgroup>
@@ -66,7 +66,7 @@
 				</tr>
 				<tr>
 					<th>파일첨부</th>
-					<td>
+					<td><input type="hidden" name="oldfile" value="${board.getBfile() }">
 						<img src="upload/${board.getBfile() }"><br>
 						<input type="file" name="bfile" id="bfile">
 					</td>

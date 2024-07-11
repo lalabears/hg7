@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -35,18 +36,17 @@
 					<th>취미</th>
 					<th>가입일</th>
 				</tr>
-		
+		<c:forEach var="m" items="${list }">
 			<tr>
-				<td> </td>
-				<td> </td>
-				<td> </td>
-				<td> </td>
-				<td> </td>
+				<td> ${m.getId() } </td>
+				<td> ${m.getName() }  </td>
+				<td> ${m.getGender() } </td>
+				<td> ${m.getHobbys() } </td>
+				<td> ${m.getJdate() } </td>
 			</tr>	
-				
-
+		</c:forEach>
 			</table>
-			<a href = ""><button type="button">홈으로</button></a>
+			<a href = "index.jsp"><button type="button">홈으로</button></a>
 		
 		</div>
 	</body>

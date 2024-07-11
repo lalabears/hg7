@@ -10,10 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.java.www.service.BDeleteService;
+import com.java.www.service.BEditService;
 import com.java.www.service.BListService;
 import com.java.www.service.BService;
 import com.java.www.service.BViewService;
 import com.java.www.service.BWriteService;
+import com.java.www.service.MJoinService;
+import com.java.www.service.MListService;
+import com.java.www.service.MService;
 @WebServlet("*.do")
 public class FController extends HttpServlet {
 	protected void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,10 +30,17 @@ public class FController extends HttpServlet {
 		System.out.println("파일이름 : "+ fileName);
 		String url = "";
 		
-		BService bservice=null;
-		
+		BService bservice = null;
+		MService mservice = null; 
 		switch(fileName){
 		
+		case "/meberAll.do":
+			mservice = new MListService(); // 다형성 
+			mservice.execute(request, response);
+			url = "mlist.jsp";
+			break;
+		
+			
 		// 메인화면
 		case "/index.do":
 			response.sendRedirect("index.jsp");
@@ -74,15 +85,22 @@ public class FController extends HttpServlet {
 			break;
 		// 글 수정 등록
 		case "/edit.do":
-			url = "";
+			bservice = new BEditService(); // 다형성 
+			bservice.execute(request, response);
+			url = "doModi.jsp";
 			break;
-			
-			
-		case "/meberAll.do":
+		// 회원가입창 그대로 보여주는 화면
+		case "/join.do":
+			url = "join.jsp";
+			break;
+		// 실제로 저장하기위한 (db연결)
+		case "/dojoin.do":
+			mservice = new MJoinService(); // 다형성 
+			mservice.execute(request, response);
+			url = "doJoin.jsp";
 			break;
 		case "/logout.do":
-			break;
-		case "/join.do":
+			url ="logout.jsp";
 			break;
 		}
 		RequestDispatcher rd = request.getRequestDispatcher(url);

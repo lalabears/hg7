@@ -63,4 +63,59 @@ public class MemberDao {
 		}catch(Exception e) {e.printStackTrace();}
 		return connection;
 	}
+
+
+	public ArrayList<Member> selectAll() {
+		try {
+			conn= getConnection();
+			query="select * from member order by jdate";
+			pstmt = conn.prepareStatement(query);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				id = rs.getString("id");
+				pw = rs.getString("pw");
+				name = rs.getString("name");
+				phone = rs.getString("phone");
+				gender = rs.getString("gender");
+				hobbys = rs.getString("hobbys");
+				jdate = rs.getTimestamp("jdate");
+				member = new Member(id,pw,name,phone,gender,hobbys,jdate);	
+				list.add(member);
+			}
+		}catch(Exception e ) {e.printStackTrace();}
+		finally {
+			try {
+				if(rs!=null) rs.close();
+				if(conn!=null)conn.close();
+				if(pstmt!=null) pstmt.close();
+			}catch(Exception e2) {e2.printStackTrace();}
+		}
+		return list;
+	}
+
+
+	public int insertOne(Member m) {
+		int result = 0;
+		try {
+			conn = getConnection();
+			query ="insert into member values (?,?,?,?,?,?,sysdate)";
+			//'eee','1111','유관순','010-2222-2222','Female','',sysdate
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, m.getId());
+			pstmt.setString(2, m.getPw());
+			pstmt.setString(3, m.getName());
+			pstmt.setString(4, m.getPhone());
+			pstmt.setString(5, m.getGender());
+			pstmt.setString(6, m.getHobbys());
+			result = pstmt.executeUpdate();
+		}catch(Exception e ) {e.printStackTrace();}
+		finally {
+			try {
+				if(rs!=null) rs.close();
+				if(conn!=null)conn.close();
+				if(pstmt!=null) pstmt.close();
+			}catch(Exception e2) {e2.printStackTrace();}
+		}
+		return result;
+	}
 }

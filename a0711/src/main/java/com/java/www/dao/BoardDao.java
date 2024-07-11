@@ -145,6 +145,30 @@ public class BoardDao {
 		
 		return result;
 	}
+
+	public int updateOne(Board b) {
+		int result = 0 ; 
+		try {
+			conn = getConnection();
+			query = "update board set btitle=?, "
+					+ "bcontent=?, bfile=?, bdate=sysdate where bno=?";
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, b.getBtitle());
+			pstmt.setString(2, b.getBcontent());
+			pstmt.setString(3, b.getBfile());
+			pstmt.setInt(4, b.getBno());
+			result = pstmt.executeUpdate();
+			
+		}catch(Exception e ) {e.printStackTrace();}
+		finally {
+			try {
+				if(rs!=null) rs.close();
+				if(conn!=null) conn.close();
+				if(pstmt!=null) pstmt.close();
+			}catch (Exception e2) {e2.printStackTrace();}
+		}
+		return result;
+	}
 	
 	
 
