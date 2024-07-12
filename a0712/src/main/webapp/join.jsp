@@ -12,12 +12,23 @@
 		<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 		<script>
-		    new daum.Postcode({
-		        oncomplete: function(data) {
-		            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
-		            // 예제를 참고하여 다양한 활용법을 확인해 보세요.
-		        }
-		    }).open();
+			$(function(){
+				// 버튼을 클릭하면
+				$("#zipBtn").click(function(){
+					// 다음api실행 
+				    new daum.Postcode({
+				        oncomplete: function(data) {
+				            $("#postal").val(data.zonecode);
+				            $("#address1").val(data.address);
+				        	
+				        }
+				    }).open();
+				    
+				}); // zipbtn
+				
+				
+			    
+			}); // jquery
 		</script>
 		
 		
@@ -28,7 +39,7 @@
 	<body>
 		<%@ include file="top.jsp" %>
 	<section>
-			<form name="agree" method="get" action="join03_success.html">
+			<form name="agree" method="get" action="dojoin.do">
 				<div id="subBanner"></div>
 				<div id="locationN">
 					<ul>
@@ -178,8 +189,8 @@
 								<option value="1996">1996</option>
 								<option value="1997">1997</option>
 								<option value="1998">1998</option>
-								<option value="1988">1999</option>
-								<option value="1920">2000</option>
+								<option value="1999">1999</option>
+								<option value="2000">2000</option>
 							</select>
 							<span>년</span>
 							<select id="birth_month" name="birth_month" required>

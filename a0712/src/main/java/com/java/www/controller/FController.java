@@ -15,7 +15,10 @@ import com.java.www.service.BListService;
 import com.java.www.service.BService;
 import com.java.www.service.BViewService;
 import com.java.www.service.BWriteService;
+import com.java.www.service.MJoinService;
+import com.java.www.service.MLoginService;
 import com.java.www.service.MService;
+import com.java.www.service.MViewService;
 
 @WebServlet("*.do")
 public class FController extends HttpServlet {
@@ -33,6 +36,37 @@ public class FController extends HttpServlet {
 		case "/main.do":  //메인으로.. 
 			url="main.jsp";
 			break;
+		case "/login.do":   // 로그인 화면 열기
+			url ="login.jsp";
+			break;
+		case "/dologin.do":  // 로그인 정보로 db에서 자료있나 확인
+			mservice = new MLoginService();
+			mservice.execute(request, response);
+			url ="doLogin.jsp";
+			break;
+		case "/join.do":  // 회원가입 창 열기
+			url ="join.jsp";
+			break;
+		case "/dojoin.do": //회원가입 후 값 db에 넣기
+			mservice = new MJoinService();
+			mservice.execute(request, response);
+			url ="doJoin.jsp";
+			break;
+		case "/modiMem.do":  // 회원정보를 가져와서 보여주는 화면
+			mservice = new MViewService();
+			mservice.execute(request, response);
+			url ="modiMem.jsp";
+			break;
+//		case "/domodiMem.do":  // db를 업데이트하는 부분
+//			mservice = new MUpdateService();
+//			mservice.execute(request, response);
+//			url ="domodiMem.jsp";
+//			break;
+			
+			
+			
+			
+			
 		case "/list.do": // 게시판으로..
 			bservice = new BListService();
 			bservice.execute(request, response);

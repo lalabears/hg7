@@ -5,7 +5,7 @@
       <li><a href="join.do">회원가입</a></li> <span>|</span>
       <li><a href="login.do">로그인</a></li> <span>|</span>
       <li><a href="list.do">게시판</a></li> <span>|</span>
-      <li>배송지역검색</li> <span>|</span>
+      <li><a href="modiMem.do">회원정보수정</a></li> <span>|</span>
       <li><a href="main.do">메인</a></li>
     </ul>
   </header>
