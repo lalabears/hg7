@@ -2,16 +2,16 @@
     pageEncoding="UTF-8"%>
 <header>
     <ul>
-      <li>회원가입</li> <span>|</span>
-      <li>로그인</li> <span>|</span>
-      <li>고객행복센터</li> <span>|</span>
+      <li><a href="join.do">회원가입</a></li> <span>|</span>
+      <li><a href="login.do">로그인</a></li> <span>|</span>
+      <li><a href="list.do">게시판</a></li> <span>|</span>
       <li>배송지역검색</li> <span>|</span>
-      <li>기프트카드 등록</li>
+      <li><a href="main.do">메인</a></li>
     </ul>
   </header>
 
   <nav>
-    <div class="logo"></div>
+   <div class="logo"></div>
 
     <div id="search">
       <div class="search"></div><br>

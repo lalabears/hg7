@@ -26,26 +26,30 @@
         <tr>
           <th>작성자</th>
           <td>
-            작성자의 아이디가 들어가는 부분입니다.
+            ${board.id }
+            <input type="hidden" id = "id" name="id" value="${board.id }">
+            <input type="hidden" id = "bno" name="bno" value="${board.bno }">
           </td>
         </tr>
         <tr>
           <th>제목</th>
           <td>
-            <input type="text" name="btitle">
+            <input type="text" name="btitle" value="${board.btitle }">
           </td>
         </tr>
         <tr>
           <th>내용</th>
           <td>
-            <textarea name="bcontent" cols="50" rows="10"></textarea>
+            <textarea name="bcontent" cols="50" rows="10">${board.bcontent }</textarea>
           </td>
         </tr>
         <tr>
           <th>이미지 표시</th>
           <td>
-          	<img src="">
-            <input type="hidden" name="oldfile" id="oldfile">
+          <!-- 보여짐  -->
+          	<img src="upload/${board.bfile }">
+          	<!-- 원래file이름을 submit했을때 넘기고싶음. -->
+            <input type="hidden" name="oldfile" id="oldfile" value="${board.bfile }">
           </td>
         </tr>
         <tr>

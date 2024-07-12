@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -12,7 +13,6 @@
   <link rel="stylesheet" href="css/notice_list.css">
 </head>
 <body>
-  
 <%@ include file="top.jsp" %>
   <section>
     <h1>NOTICE</h1>
@@ -49,13 +49,16 @@
         <th>조회수</th>
       </tr>
       <!-- tbody 부분 , 디비에 있는 내용 출력할 부분 (내용부분) -->
-      <tr>
-        <td><span class="table-notice"> 1</span></td>
-        <td class="table-title"> <a href="">카카오플러스 친구 오픈</a></td>
-        <td>id</td>
-        <td>2018-07-11</td>
-        <td>0</td>
-      </tr>
+      <c:forEach var = "b" items="${list }">
+	      <tr>
+	        <td><span class="table-notice"> ${b.bno }</span></td>
+	        <td class="table-title"><a href="view.do?bno=${b.bno }">${b.btitle }</a></td>
+	        <td>${b.id }</td>
+	        <td>${b.bdate }</td>
+	        <td>${b.bhit }</td>
+	      </tr>
+      </c:forEach>
+      <!-- tbody 부분 , 디비에 있는 내용 출력할 부분 (내용부분) -->
     </table>
     <ul class="page-num">
       <li class="first"></li>

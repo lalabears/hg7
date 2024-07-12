@@ -27,19 +27,19 @@
         <th colspan="3">제목</th>
       </tr>
       <tr>
-        <td colspan="3">게시글의 제목이 들어갈 위치입니다</td>
+        <td colspan="3">${board.btitle }</td>
       </tr>
-      <tr>
-        <td>아이디</td>
+      <tr> 
+        <td>${board.id }</td>
         <td>조회수</td>
-        <td>0</td>
+        <td>${board.bhit }</td>
       </tr>
       <tr>
-        <td colspan="3" class="article"> 게시글의 내용이 들어갈위치입니다</td>
+        <td colspan="3" class="article"> ${board.bcontent }</td>
       </tr>
       <tr>
         <td class="article">
-          <img src="" alt="이미지대체글" width="80%">
+          <img src="upload/${board.bfile }" alt="이미지대체글" width="80%">
         </td>
       </tr>
       <tr>
@@ -52,13 +52,13 @@
 	<script>
 		function deleteBtn(){
 			if( confirm("게시글을 삭제하시겠습니까? ")){
-				location.href="delete.do?bno=";
+				location.href="delete.do?bno=${board.bno}";
 			}
 		}
 	</script>
     <a href="list.do"><div class="list">목록</div></a>
     <a onclick="deleteBtn()"><div class="list">삭제</div></a>
-    <a href="edit.do?bno="><div class="list">수정</div></a>
+    <a href="edit.do?bno=${board.bno}"><div class="list">수정</div></a>
   </section>
 
  <%@ include file="foot.jsp" %>

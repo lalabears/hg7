@@ -26,7 +26,8 @@
         <tr>
           <th>작성자</th>
           <td>
-            작성자의 아이디가 들어가는 부분입니다.
+            ${sessionId }
+            <input type="hidden" name="id" value="${sessionId }">
           </td>
         </tr>
         <tr>

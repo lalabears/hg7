@@ -9,16 +9,25 @@
 		<link rel="stylesheet" type="text/css" href="css/style_footer.css">
 		<link rel="stylesheet" href="css/style.css">
 		<title>회원가입 - 회원정보입력</title>
+		<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+		<script>
+		    new daum.Postcode({
+		        oncomplete: function(data) {
+		            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+		            // 예제를 참고하여 다양한 활용법을 확인해 보세요.
+		        }
+		    }).open();
+		</script>
+		
+		
+		
+		
+		
 	</head>
 	<body>
 		<%@ include file="top.jsp" %>
-		
-		
-		
-		
-		
-		
-		<section>
+	<section>
 			<form name="agree" method="get" action="join03_success.html">
 				<div id="subBanner"></div>
 				<div id="locationN">
@@ -127,10 +136,10 @@
 							<label for="">주소</label>
 						</dt>
 						<dd>
-							<input type="text" id="f_postal" name="f_postal" required />
-							<span>-</span>
-							<input type="text" id="l_postal" name="l_postal" required />
-							<input type="button" value="우편번호"/>
+							<input type="text" id="postal" name="postal" required />
+							<span></span>
+							<input type="hidden" id="l_postal" name="l_postal" required />
+							<input type="button" id="zipBtn" value="우편번호"/>
 							<input type="text" id="address1" name="address1" required />
 							<input type="text" id="address2" name="address2" required />
 						</dd>
